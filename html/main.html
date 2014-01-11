@@ -1,21 +1,36 @@
 <!DOCTYPE HTML>
-<html manifest="crunch.manifest">
+<html> <!-- enable  manifest="crunch.manifest" when ready to support offline -->
 <head>
 	<meta charset="utf-8">
 	<title>Crunch</title>
 	
-	<script>
-	function preventDefault(event){ 
-            event.preventDefault(); 
-        } 
-	</script>
 	<script src="js/main.js"></script>
-	<style type="text/css">
-		body { background: #666462; }
-	</style>
+	
+	<link rel="stylesheet" href="js/lib/codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="css/styles.css">
+
 	
 </head>
 <body>
 	This is Crunch 2.
+	
+	<div class="panel-main">
+		<div id="editor"></div>
+	</div>
+	
+	
+	<!-- #scripts -->
+	<script src="js/lib/codemirror/lib/codemirror.js"></script>
+	<script src="extend/modes/less/less.js"></script>
+	<script>
+	var myCodeMirror = CodeMirror(document.getElementById("editor"), {
+		mode: "less",
+		indentUnit: 4,
+		tabSize: 4,
+		indentWithTabs: true,
+		lineNumbers: true,
+		
+	});
+	</script>
 </body>
 </html>
