@@ -3,22 +3,31 @@
 		<!-- We might want a dynamically generated appcache to include all ace files --> 
 <head>
 	<meta charset="utf-8">
-	<title>Crunch</title>
-	
-	<script src="js/main.js"></script>
+	<title>Crunch</title>	
 	
 	<link rel="stylesheet" href="css/styles.css">
 	
 </head>
 <body>
-	<div class="panel-left"></div>
+	<div class="panel-left">
+		<div class="search"></div>
+		<div class="tree">
+			<div class="files"></div>
+			<div class="project"></div>
+		</div>
+		<div class="errors"></div>
+	</div>
 
 	<div class="panel-main">
+		<div class="tabs">
+			<div class="files"></div>
+			<div class="project"></div>
+		</div>
 		<div class="editor"></div>
 	</div>
 	
-	
 	<!-- #scripts -->
-	<script src="js/lib/ace/ace.js"></script>	
+	<script src="js/lib/ace/ace.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>

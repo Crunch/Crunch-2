@@ -1,8 +1,16 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
 html, body { height: 100%; }
 body {
     background: #666462;
+    border-top: 1px solid #696969;
 }
-.panel-left { }
+.panel-left { 
+    background: #666462;
+    border-right: 1px solid #474644;
+}
 .panel-main {
     background: #edece8;
     position: absolute;
