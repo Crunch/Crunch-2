@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html> <!-- enable  manifest="crunch.manifest" when ready to support offline -->
+<html>	<!-- enable  manifest="crunch.appcache" when ready to support offline -->
+		<!-- We might want a dynamically generated appcache to include all ace files --> 
 <head>
 	<meta charset="utf-8">
 	<title>Crunch</title>
@@ -10,14 +11,14 @@
 	
 </head>
 <body>
-	This is Crunch 2.
-	
+	<div class="panel-left"></div>
+
 	<div class="panel-main">
-		<div id="editor"></div>
+		<div class="editor"></div>
 	</div>
 	
 	
 	<!-- #scripts -->
-
+	<script src="js/lib/ace/ace.js"></script>	
 </body>
 </html>
