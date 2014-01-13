@@ -341,15 +341,50 @@ table {
 }
 @font-face {
   font-family: SourceCode;
+  font-weight: normal;
+  font-style: normal;
   src: url("fonts/SourceCodePro-Regular.otf.woff") format("woff");
 }
 @font-face {
   font-family: SourceSans;
+  font-weight: normal;
+  font-style: normal;
   src: url("fonts/SourceSansPro-Regular.otf.woff") format("woff");
 }
 @font-face {
   font-family: SymbolSet;
   src: url("fonts/ss-standard.woff") format("woff");
+}
+.search {
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #4c5053;
+  border-bottom: 1px solid #3d4042;
+}
+.search input {
+  border: 0 none;
+  background: transparent;
+  height: 40px;
+  width: 100%;
+  padding-left: 40px;
+  color: white;
+  font-family: SourceSans;
+  font-size: 18px;
+}
+.search:before {
+  font-family: SymbolSet;
+  content: '\1F50E';
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: #d98541;
+  line-height: 44px;
+  position: absolute;
 }
 /* apply a natural box layout model to all elements */
 *,
@@ -358,6 +393,10 @@ table {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+textarea,
+input {
+  outline: none;
 }
 html,
 body {
@@ -368,6 +407,7 @@ body {
   border-top: 1px solid #696969;
   font-family: SourceSans;
   font-size: 12px;
+  -webkit-font-smoothing: antialiased;
 }
 b,
 i,
@@ -411,6 +451,7 @@ u {
 .tabs .tab {
   border-radius: 3px 3px 0 0;
   display: inline-block;
+  margin: 0 1px;
 }
 .tabs .tab b,
 .tabs .tab span {
@@ -428,14 +469,27 @@ u {
   border-left: 1px solid rgba(50, 50, 50, 0.4);
   width: 26px;
   margin-left: -3px;
-  margin-top: -4px;
-  height: 32px;
+  margin-top: -5px;
+  height: 34px;
+  color: white;
+  border-radius: 0 2px 0 0;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), inset 0 -1px rgba(0, 0, 0, 0.25);
+}
+.tabs .tab .out:before {
+  width: 25px;
+  height: 30px;
+  margin-top: 2px;
+  content: '\25CE';
+  font-family: SymbolSet;
+  display: inline-block;
+  text-align: center;
+  opacity: 0.8;
 }
 .tabs .files {
   background: #666462;
   border-left: 1px solid #999999;
   height: 40px;
-  padding-top: 5px;
+  padding: 5px 3px 0;
   position: absolute;
   left: 0;
   top: 0;
@@ -450,4 +504,16 @@ u {
   line-height: 35px;
   color: #e5e5e5;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), inset 0 -1px rgba(0, 0, 0, 0.25);
+}
+.tabs .files .tab.active {
+  background: #edece8 none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.25);
+  color: #404040;
+}
+.tabs .files .tab.active .close {
+  color: #737373;
+}
+.tabs .files .tab.active .out {
+  background: #d98541 none;
+  color: black;
 }
