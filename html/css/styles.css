@@ -448,26 +448,26 @@ u {
   height: 40px;
   white-space: nowrap;
 }
-.tab-out {
+.tabs .tab-out {
   display: inline-block;
   margin: 0 1px;
 }
-.tab {
+.tabs .tab {
   border-radius: 3px 3px 0 0;
   position: relative;
 }
-.tab b,
-.tab span {
+.tabs .tab b,
+.tabs .tab span {
   display: inline-block;
   vertical-align: middle;
   height: 34px;
 }
-.tab span {
+.tabs .tab span {
   font-size: 18px;
   line-height: 30px;
   padding-right: 9px;
 }
-.tab .crunch {
+.tabs .tab .crunch {
   position: absolute;
   top: 0;
   right: 0;
@@ -479,7 +479,7 @@ u {
   border-radius: 0 2px 0 0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), inset 0 -1px rgba(0, 0, 0, 0.25);
 }
-.tab .crunch:before {
+.tabs .tab .crunch:before {
   width: 25px;
   height: 30px;
   margin-top: 3px;
@@ -492,7 +492,7 @@ u {
   content: '';
   background-repeat: no-repeat;
 }
-.files {
+.tabs .files {
   background: #666462;
   height: 40px;
   padding: 5px 3px 0;
@@ -501,7 +501,7 @@ u {
   top: 0;
   right: 0;
 }
-.files .tab {
+.tabs .files .tab {
   background: #8c837d linear-gradient(#8c837d, #807973);
   border: 1px solid #575553;
   border-width: 1px 1px 0 1px;
@@ -512,34 +512,34 @@ u {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), inset 0 -1px rgba(0, 0, 0, 0.25);
   padding-right: 30px;
 }
-.files .plain .tab {
+.tabs .files .plain .tab {
   padding-right: 4px;
 }
-.files .active .tab {
+.tabs .files .active .tab {
   background: #edece8 none;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.25);
   color: #404040;
 }
-.files .active .tab .close {
+.tabs .files .active .tab .close {
   color: #737373;
 }
-.files .active .tab .crunch {
+.tabs .files .active .tab .crunch {
   background: #d98541 none;
 }
-.files .active .tab .crunch:before {
+.tabs .files .active .tab .crunch:before {
   opacity: 0.8;
 }
-.files .minis {
+.tabs .files .minis {
   margin-bottom: -35px;
   font-size: 18px;
   color: #7a7a78;
   padding-left: 3px;
   line-height: 37px;
 }
-.files .active .minis {
+.tabs .files .active .minis {
   background: #c7c6c3;
 }
-.files .mini {
+.tabs .files .mini {
   display: inline-block;
   border-radius: 3px 3px 0 0;
   height: 30px;
@@ -548,7 +548,7 @@ u {
   border-bottom: 0;
   padding: 0 12px;
 }
-.files .mini.active {
+.tabs .files .mini.active {
   color: #404040;
   background: #edece8;
   border-color: #bfbebb;
