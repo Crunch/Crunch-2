@@ -28,7 +28,7 @@
 						<b class="crunch"></b>
 					</div>
 				</div>
-				<div class="tab-out active flipped">
+				<div class="tab-out active">
 					<div class="tab minis">
 						<div class="mini active">LESS</div>
 						<div class="mini">CSS</div>
@@ -41,6 +41,11 @@
 					</div>
 				</div>
 				<div class="tab-out">
+					<div class="tab minis">
+						<div class="mini active">COFFEE</div>
+						<div class="mini">JS</div>
+						<b class="crunch up"></b>
+					</div>
 					<div class="tab reg">
 						<b class="close"></b>
 						<span>thisIsaLongFilename.coffee</span>
@@ -66,6 +71,9 @@
 	<script>
 		$('.crunch').click(function() {
 			$(this).closest('.tab-out').toggleClass('flipped');
+		});
+		$('.tab-out').click(function() {
+			$(this).addClass('active').siblings().removeClass('active flipped');
 		});
 	</script>
 

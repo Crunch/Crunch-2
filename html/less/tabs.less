@@ -24,6 +24,10 @@
         cursor: default;
         -webkit-perspective: 600px;
         perspective: 600px;
+        position: relative;
+        &.active {
+            z-index: 5;
+        }
     }
     .tab {
         border-radius: 3px 3px 0 0;
@@ -52,6 +56,8 @@
             border-radius: 0 2px 0 0;
             box-shadow: inset 0 1px rgba(255,255,255,0.25),
                 inset 0 -1px rgba(0,0,0,0.25);
+            font-size: 13px;
+            line-height: 32px;
             &:before {
                 width: 25px;
                 height: 30px;
@@ -64,6 +70,11 @@
                 background-position: center;
                 content: '';
                 background-repeat: no-repeat;
+            }
+            &.up:before {
+                background-image: none;
+                content: '\25B4';
+                font-family: SymbolSet;
             }
         }
     }
@@ -95,26 +106,26 @@
             &.reg {
                 -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
                 transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-                -webkit-transform-origin: center;
+                -webkit-transform-origin: bottom;
             }
             &.minis {
-                -webkit-transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(18px);
-                transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(18px);
-                -webkit-transform-origin: center;
+                -webkit-transform: perspective(600px) rotateX(91deg) rotateY(0deg) rotateZ(0deg);
+                transform: perspective(600px) rotateX(91deg) rotateY(0deg) rotateZ(0deg);
+                -webkit-transform-origin: bottom;
             }
            
             
         }
         .flipped .tab {
             &.reg {
-                -webkit-transform: perspective(600px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg)  translateZ(18px);
-                transform: perspective(600px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg)  translateZ(18px);
-                -webkit-transform-origin: center;
+                -webkit-transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg);
+                transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg);
+                -webkit-transform-origin: bottom;
             }
             &.minis {
                 -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
                 transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-                -webkit-transform-origin: center;
+                -webkit-transform-origin: bottom;
             }
         }
         .plain .tab {
@@ -132,6 +143,10 @@
                 &:before {
                     opacity: 0.8;
                     background-image: url("../img/topdown_black.svg");
+                }
+                &.up:before {
+                    background-image: none;
+                    color: black;
                 }
             }
         }
