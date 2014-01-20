@@ -525,32 +525,38 @@ u {
   color: #e5e5e5;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), inset 0 -1px rgba(0, 0, 0, 0.25);
   padding-right: 30px;
-  transition: transform 0.25s;
-  -webkit-transition: -webkit-transform 0.25s;
   backface-visiblity: hidden;
   -ms-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
+  transition: transform 0.15s;
+  -webkit-transition: -webkit-transform 0.15s;
+}
+.tabs .files .tab.reg,
+.tabs .files .tab.minis {
+  -webkit-transform-origin: 50% 50% -34px;
 }
 .tabs .files .tab.reg {
-  -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  -webkit-transform-origin: bottom;
+  -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+  transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+  opacity: 1;
 }
 .tabs .files .tab.minis {
-  -webkit-transform: perspective(600px) rotateX(91deg) rotateY(0deg) rotateZ(0deg);
-  transform: perspective(600px) rotateX(91deg) rotateY(0deg) rotateZ(0deg);
-  -webkit-transform-origin: bottom;
+  -webkit-transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+  transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+  opacity: 1;
 }
 .tabs .files .flipped .tab.reg {
-  -webkit-transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg);
-  transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg);
-  -webkit-transform-origin: bottom;
+  -webkit-transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+  transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+  opacity: 0;
+  transition: transform 0.15s, opacity 0.05s linear 0.10s;
+  -webkit-transition: -webkit-transform 0.15s, opacity 0.05s linear 0.1s;
 }
 .tabs .files .flipped .tab.minis {
-  -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  -webkit-transform-origin: bottom;
+  -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+  transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+  opacity: 1;
 }
 .tabs .files .plain .tab {
   padding-right: 4px;
@@ -598,3 +604,56 @@ u {
   background: #edece8;
   border-color: #bfbebb;
 }
+/*
+@keyframes TAB_MINI_ANIMATION {
+    0% {
+        transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px); 
+        opacity 1;
+    }
+}
+@-webkit-keyframes TAB_MINI_ANIMATION {
+    0% {
+        -webkit-transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px); 
+        opacity 1;
+    }
+}
+@keyframes TAB_ANIMATION {
+    0% {
+        transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: perspective(600px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px); 
+        opacity 0;
+    }
+}
+@-webkit-keyframes TAB_ANIMATION {
+    0% {
+        -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: perspective(600px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px); 
+        opacity 0;
+    }
+} */
