@@ -20,7 +20,11 @@
     right: 0;
     height: 40px;
     white-space: nowrap;
-    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     
     .tab-out {
         display: inline-block;
@@ -62,6 +66,9 @@
                 inset 0 -1px rgba(0,0,0,0.25);
             font-size: 13px;
             line-height: 32px;
+            &:hover {
+                background: lighten(#a69b95,5%) linear-gradient(lighten(#a69b95,5%), lighten(#99908a,5%));  
+            }
             &:before {
                 width: 25px;
                 height: 30px;
@@ -107,6 +114,9 @@
             -moz-backface-visibility: hidden;
             transition: transform 0.15s;
             -webkit-transition: -webkit-transform 0.15s;  
+            &:hover {
+                background: lighten(#8C837d,5%) linear-gradient(lighten(#8C837d,5%), lighten(#807973,5%));
+            }
             &.reg, &.minis {
                -webkit-transform-origin: 50% 50% -34px; 
             }
@@ -151,6 +161,9 @@
             }
             .crunch {
                 background: #d98541 none;
+                &:hover {
+                    background-color: lighten(#d98541,5%);
+                }
                 &:before {
                     opacity: 0.8;
                     background-image: url("../img/topdown_black.svg");
@@ -177,13 +190,20 @@
             border-radius: 3px 3px 0 0;
             height: 30px;
             line-height: 28px;
-            border: 1px solid #c7c6c3;
+            border: 1px solid #a69b95;
             border-bottom: 0;
             padding: 0 12px;
+            color: #e5e5e5;
             &.active {
-                color: #404040;
-                background: #edece8;
+                background: #a69b95 linear-gradient(#a69b95, #99908a);
+            }
+        }
+        .active .mini {
+            color: #404040;
+            border-color: lighten(#c7c6c3,5%);
+            &.active {
                 border-color: #bfbebb;
+                background: #edece8;            
             }
         }
     }

@@ -447,6 +447,11 @@ u {
   right: 0;
   height: 40px;
   white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .tabs .tab-out {
   display: inline-block;
@@ -487,6 +492,9 @@ u {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), inset 0 -1px rgba(0, 0, 0, 0.25);
   font-size: 13px;
   line-height: 32px;
+}
+.tabs .tab .crunch:hover {
+  background: #b2a8a3 linear-gradient(#b2a8a3, #a59d98);
 }
 .tabs .tab .crunch:before {
   width: 25px;
@@ -532,6 +540,9 @@ u {
   transition: transform 0.15s;
   -webkit-transition: -webkit-transform 0.15s;
 }
+.tabs .files .tab:hover {
+  background: #98908b linear-gradient(#98908b, #8d8680);
+}
 .tabs .files .tab.reg,
 .tabs .files .tab.minis {
   -webkit-transform-origin: 50% 50% -34px;
@@ -572,6 +583,9 @@ u {
 .tabs .files .active .tab .crunch {
   background: #d98541 none;
 }
+.tabs .files .active .tab .crunch:hover {
+  background-color: #dd9356;
+}
 .tabs .files .active .tab .crunch:before {
   opacity: 0.8;
   background-image: url("../img/topdown_black.svg");
@@ -595,14 +609,21 @@ u {
   border-radius: 3px 3px 0 0;
   height: 30px;
   line-height: 28px;
-  border: 1px solid #c7c6c3;
+  border: 1px solid #a69b95;
   border-bottom: 0;
   padding: 0 12px;
+  color: #e5e5e5;
 }
 .tabs .files .mini.active {
+  background: #a69b95 linear-gradient(#a69b95, #99908a);
+}
+.tabs .files .active .mini {
   color: #404040;
-  background: #edece8;
+  border-color: #d3d3d0;
+}
+.tabs .files .active .mini.active {
   border-color: #bfbebb;
+  background: #edece8;
 }
 /*
 @keyframes TAB_MINI_ANIMATION {
