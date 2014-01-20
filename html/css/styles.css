@@ -451,6 +451,9 @@ u {
 .tabs .tab-out {
   display: inline-block;
   margin: 0 1px;
+  cursor: default;
+  -webkit-perspective: 600px;
+  perspective: 600px;
 }
 .tabs .tab {
   border-radius: 3px 3px 0 0;
@@ -511,6 +514,32 @@ u {
   color: #e5e5e5;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), inset 0 -1px rgba(0, 0, 0, 0.25);
   padding-right: 30px;
+  transition: transform 0.25s;
+  -webkit-transition: -webkit-transform 0.25s;
+  backface-visiblity: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+.tabs .files .tab.reg {
+  -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  -webkit-transform-origin: center;
+}
+.tabs .files .tab.minis {
+  -webkit-transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(18px);
+  transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(18px);
+  -webkit-transform-origin: center;
+}
+.tabs .files .flipped .tab.reg {
+  -webkit-transform: perspective(600px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(18px);
+  transform: perspective(600px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(18px);
+  -webkit-transform-origin: center;
+}
+.tabs .files .flipped .tab.minis {
+  -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  -webkit-transform-origin: center;
 }
 .tabs .files .plain .tab {
   padding-right: 4px;

@@ -34,21 +34,21 @@
 						<div class="mini">CSS</div>
 						<b class="crunch up"></b>
 					</div>
-					<div class="tab">
+					<div class="tab reg">
 						<b class="close"></b>
 						<span>active.less</span>
 						<b class="crunch"></b>
 					</div>
 				</div>
 				<div class="tab-out">
-					<div class="tab">
+					<div class="tab reg">
 						<b class="close"></b>
 						<span>thisIsaLongFilename.coffee</span>
 						<b class="crunch"></b>
 					</div>
 				</div>
 				<div class="tab-out plain">
-					<div class="tab">
+					<div class="tab reg">
 						<b class="close"></b>
 						<span>file.txt</span>
 					</div>
@@ -61,6 +61,13 @@
 	
 	<!-- #scripts -->
 	<script src="js/lib/ace/ace.js"></script>
+	<script src="js/lib/jquery.js"></script>
 	<script src="js/main.js"></script>
+	<script>
+		$('.crunch').click(function() {
+			$(this).closest('.tab-out').toggleClass('flipped');
+		});
+	</script>
+
 </body>
 </html>
