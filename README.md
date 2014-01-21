@@ -1,6 +1,6 @@
 Crunch 2!
 =======
 
-Write one thing, save another.
+Is it a code editor? Is it a code compiler? **ANSWER: YES.**
 
 
