@@ -4,12 +4,18 @@
 }
 textarea, input { outline: none; }
 html, body { height: 100%; }
+    
 body {
     background: #666462;
     border-top: 1px solid #696969;
     font-family: SourceSans;
     font-size: 12px;
     -webkit-font-smoothing: antialiased;
+    transition: opacity 0.1s;
+    -webkit-transition: opacity 0.1s; 
+    &.loaded {
+        opacity: 1;
+    }
 }
 b, i, u {
     font-weight: normal;

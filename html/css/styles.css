@@ -408,6 +408,11 @@ body {
   font-family: SourceSans;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
+  transition: opacity 0.1s;
+  -webkit-transition: opacity 0.1s;
+}
+body.loaded {
+  opacity: 1;
 }
 b,
 i,
