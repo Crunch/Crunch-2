@@ -5,7 +5,8 @@
 		curl: 'lib/curl/curl.min',
 		paths: {
 			jquery: 'lib/jquery',
-			css: '../css'
+			css: '../css',
+			template: 'template'
 		},
 		defineName: 'def'
 	};
