@@ -6,7 +6,8 @@
 		paths: {
 			jquery: 'lib/jquery',
 			css: '../css',
-			template: 'template'
+			text: 'lib/curl/plugin/text',
+			'_fetchText': 'lib/curl/plugin/_fetchText'
 		},
 		defineName: 'def'
 	};
