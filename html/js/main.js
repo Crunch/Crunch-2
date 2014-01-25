@@ -15,7 +15,7 @@
 	curl(curlCfg, ['lib/ractive.min', 'js!lib/ace/ace', 'link!css/styles.css']).then(function ($) {
 		
 		// init the app
-		curl(['crunch/core', 'crunch/tabs', 'domReady!']).then(function() {
+		curl(['crunch/core', 'crunch/prefs', 'crunch/session', 'domReady!']).then(function() {
 			init();	
 		});
 		

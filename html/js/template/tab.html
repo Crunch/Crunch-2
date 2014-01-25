@@ -1,16 +1,13 @@
-<div class="tab-out">
-	<div class="tab">
-		<b class="close"></b>
-		<span>style.less</span>
-		<b class="crunch"></b>
-	</div>
-</div>
-<div class="tab-out active">
+<div class="tab-out {{tabActive ? 'active' : ''}} {{hasCompiler ? '' : 'plain'}}">
+	{{ #hasCompiler }}
 	<div class="tab minis">
-		<div class="mini active">LESS</div>
-		<div class="mini">CSS</div>
+		{{ #minis:i }}
+		<div class="mini {{ i == activeMiniIndex ? 'active' : '' }}">{{ name }}</div>
+		{{ /minis }}
 		<b class="crunch up"></b>
 	</div>
+	{{ /hasCompiler }}
+	
 	<div class="tab reg">
 		<b class="close"></b>
 		<span>active.less</span>
