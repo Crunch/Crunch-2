@@ -12,88 +12,52 @@ def(function() {
 	
 	// Load previous session
 	var Session = {
-		update: function() {
+		set: function(key, value) {
+			this.state[key] = value;
 			localStorage.setObject("sessionState", this.state);
 		}
 	};
 	Session.state = localStorage.getObject("sessionState");
 	
-	// open files data model
-	var openFiles = [
-		{
-			activeIndex: 0
-			, project: [
-				{  // activeIndex == 0 therefore the "LESS" tab is active
-					type: "LESS"
-					, name: "style.less"
-					, path: "/foo/bar/"
-				}
-				, {
-					type: "CSS"
-					, output: true
-					, name: "style.css"
-					, path: "/foo/bar/"
-				}
-				, {
-					type: "LESS"
-					, name: "mixins.less"
-					, path: "/foo/bar/"
-				}
+	// open files data model... VERY MUCH WIP
+	
+	if(Session.state === null) {
+		Session.state = {};
+	}
+	else {
+		console.log('loaded from session!');
+		console.log(Session.state);
+	}
+	Session.set("openApps", {
+		"/site1/": {
+			files: [{
+				activeIndex: 0 // activeIndex == 0 therefore the "LESS" tab is active
+				, collection: [
+					{ type: "LESS", name: "style.less", path: "bar/" }
+					, { type: "CSS", output: true, name: "style.css", path: "bar/" }
+					, { type: "LESS", name: "mixins.less", path: "bar/" }
+				]
+			}
+			, {
+				activeIndex: 1 // therefore the "CSS" tab is active
+				, collection: [
+					{ type: "LESS", name: "bootstrap.less", path: "less/" }
+					, { type: "CSS", output: true, name: "bootstrap.css", path: "less/" }
+					, { type: "LESS", name: "mixins.less", path: "less/" }
+				]
+			}
+			, {
+				activeIndex: 0 
+				, collection: [ { type: "COFFEE", name: "thisIsALongFileName.coffee", path: "" }
+					, { type: "JS", output: true, name: "thisIsALongFileName.js", path: "js/"}
+				]
+			}
+			, { activeIndex: 0, collection: [{ type: "TXT", name: "plain.txt", path: "" }] }
 			]
+		} , "/site2/": {
+
+			// ...
 		}
-		, {
-			activeIndex: 1  // activeIndex == 0 therefore the "CSS" tab is active
-			, project: [
-				{
-					type: "LESS"
-					, name: "bootstrap.less"
-					, path: "/bar/foo/"
-				}
-				, {
-					type: "CSS"
-					, output: true
-					, name: "bootstrap.css"
-					, path: "/bar/foo/"
-				}
-				, {
-					type: "LESS"
-					, name: "mixins.less"
-					, path: "/bar/foo/"
-				}
-			]
-		}
-		, {
-			activeIndex: 0  // activeIndex == 0 therefore the "CSS" tab is active
-			, project: [
-				{
-					type: "COFFEE"
-					, name: "thisIsALongFileName.coffee"
-					, path: "/coffee/"
-				}
-				, {
-					type: "JS"
-					, output: true
-					, name: "thisIsALongFileName.js"
-					, path: "/js/"
-				}
-			]
-		}
-		, {
-			activeIndex: 0  // activeIndex == 0 therefore the "CSS" tab is active
-			, project: [
-				{
-					type: "COFFEE"
-					, name: "thisIsALongFileName.coffee"
-					, path: "/coffee/"
-				}
-				, {
-					type: "JS"
-					, output: true
-					, name: "thisIsALongFileName.js"
-					, path: "/js/"
-				}
-			]
-		}
-	];
+	});
 	return Session;
 });

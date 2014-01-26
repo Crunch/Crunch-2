@@ -2,6 +2,7 @@ def(['lib/lodash', 'crunch/core', 'text!template/tab.html'], function(_, Crunch,
 	Crunch.UI.Tabs = (function() {
 		
 		// Create a new tab
+		// very much WIP, likely to change
 		function newTab(data) {
 			var defaults = {
 				tabActive: true
