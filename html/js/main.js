@@ -7,7 +7,9 @@
 			//jquery: 'lib/jquery',  // jQuery, you're dead unless we become desperate
 			css: '../css',
 			text: 'lib/curl/plugin/text',
-			'_fetchText': 'lib/curl/plugin/_fetchText'
+			json: 'lib/curl/plugin/json',
+			'_fetchText': 'lib/curl/plugin/_fetchText',
+			plugins: '../plugins'
 		},
 		defineName: 'def'
 	};
