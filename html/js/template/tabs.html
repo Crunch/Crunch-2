@@ -25,7 +25,7 @@
 	<div class="tab minis">
 		{{ #collection:j }}
 		{{ # j==0 || output }}
-		<div on-click="select" class="mini {{ j == activeIndex ? 'active' : '' }}">{{ type.toUpperCase() }}</div>
+		<div on-click="select" title="/foo/bar/{{ path }}{{ name }}" class="mini {{ j == activeIndex ? 'active' : '' }}">{{ type.toUpperCase() }}</div>
 		{{ / }}
 		{{ /collection }}
 		<b class="crunch up" on-click="flipdown"></b>
@@ -34,7 +34,7 @@
 	
 	<div class="tab reg {{ activeIndex != 0 ? 'sub' : ''}}">
 		<b class="close"></b>
-		<span>{{ collection[activeIndex].name }}</span>
+		<span title="/foo/bar/{{ collection[activeIndex].path }}{{ collection[activeIndex].name }}">{{ collection[activeIndex].name }}</span>
 		{{ #hasCompiler }}
 		<b class="crunch" on-click="flipup"></b>
 		{{ /hasCompiler }}
@@ -46,7 +46,7 @@
 <div on-click="select" class="tab-out {{ activeIndex == j ? 'active' : ''}} plain">
 	<div class="tab reg">
 		<b class="close"></b>
-		<span>{{ name }}</span>
+		<span title="/foo/bar/{{ path }}{{ name }}">{{ name }}</span>
 	</div>
 </div> 
 <!-- {{/subtab}} -->
