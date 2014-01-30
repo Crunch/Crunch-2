@@ -1,13 +1,26 @@
-def(['lib/lodash', 'text!template/tabs.html', 'lib/ractive.min'], function(_, tabs, Ractive) {
+def(['lib/lodash', 'text!template/tabs.html', 'Ractive'], function(_, tabs, Ractive) {
 	var Tabs = function() {
 		
 		// Create the tabs
 		// very much WIP, likely to change
-		this.ractive = null;
+		this.topTabs = null;
 	};
 	Tabs.prototype.create = function(Crunch) {
+		Crunch.Session.state.openFiles.maxLength = function(collection) {
+			var nameLength = 0;
+			_.forEach(collection, function(fileObj, key) {
+				if(fileObj.name.length > nameLength)
+					nameLength = fileObj.name.length;
+			});
+			var minLength = (nameLength * 11) + 20;
+			if(minLength > 220)
+				minLength = 220;
+			return minLength + 'px';
+		};  // TODO: this should get moved later into the file model
+
+
 		var ractive = new Ractive({
-			el: document.getElementById('files')
+			el: document.getElementById('tabs')
 			, template: tabs
 			, magic: true // auto-update when the model changes
 			, data: Crunch.Session.state.openFiles  // hmm... we need to validate files first

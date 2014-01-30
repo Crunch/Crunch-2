@@ -46,6 +46,7 @@ def(function() {
 			project: 0
 			, activeIndex: 0 // activeIndex == 0 therefore the "LESS" tab is active
 			, hasCompiler: true  // this will eventually be determined dynamically, just for testing
+			, crunchable: true // this also is dependent on plugins
 			, flipped: false // this also shouldn't be necessary, but haven't figured out how to add it in the right place in Ractives
 			, collection: [
 			// we have an explicit type property because we may want to "cast" a file as a certain type
@@ -60,6 +61,7 @@ def(function() {
 			project: 0
 			, activeIndex: 2 // the sub-file mixins.less is active
 			, hasCompiler: true
+			, crunchable: true
 			, flipped: false
 			, collection: [
 				{ type: "less", name: "bootstrap.less", path: "less/" }
@@ -72,6 +74,7 @@ def(function() {
 			, activeIndex: 1  // the JS mini-tab is active
 			, flipped: false
 			, hasCompiler: true
+			, crunchable: false
 			, collection: [ { type: "coffee", name: "thisIsALongFileName.coffee", path: "" }
 				, { type: "js", output: true, name: "thisIsALongFileName.js", path: "js/"}
 			]

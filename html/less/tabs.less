@@ -4,11 +4,12 @@
     &, &:before {
         content: '\2421';
         font-family: SymbolSet;
-        display: inline-block;
+        display: block;
         width: 28px;
         height: 34px;
         color: #bfbdba;
         text-align: center;
+        line-height: 39px;
     }
 }
 
@@ -33,6 +34,7 @@
         -webkit-perspective: 600px;
         perspective: 600px;
         position: relative;
+        max-width: 220px;
         &.active {
             z-index: 5;
         }
@@ -40,15 +42,34 @@
     .tab {
         border-radius: 3px 3px 0 0;
         position: relative;
-        b, span {
+        background: #8C837d linear-gradient(#8C837d, #807973);
+        border: 1px solid #575553;
+        border-width: 1px 1px 0 1px;
+        vertical-align: bottom;
+        height: 35px;
+        line-height: 35px;
+        color: #e5e5e5;
+        box-shadow: inset 0 1px rgba(255,255,255,0.25),
+            inset 0 -1px rgba(0,0,0,0.25);
+        padding-right: 34px;
+        &:hover {
+            background: lighten(#8C837d,5%) linear-gradient(lighten(#8C837d,5%), lighten(#807973,5%));
+        }
+        .close {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        > span {
             display: inline-block;
             vertical-align: middle;
             height: 34px;
-        }
-        span {
             font-size: 18px;
             line-height: 30px;
-            padding-right: 9px;
+            padding-left: 28px;
+            overflow: hidden;
+            max-width: 100%;
+            text-overflow: ellipsis;
         }
         .crunch {
             position: absolute;
@@ -89,7 +110,37 @@
             }
         }
     }
-    .files {
+    .plain .tab {
+        padding-right: 11px;
+    }
+    .active .tab {
+        background: #edece8 none;
+        box-shadow: inset 0 1px rgba(255,255,255,0.25);
+        color: #404040;
+        &.sub > span {
+            color: darken(#d98541,10%);
+            text-shadow: 0px 1px rgba(255,255,255,1)
+        }
+        .close {
+            color: #737373;
+        }
+        .crunch {
+            background: #d98541 none;
+            &:hover {
+                background-color: lighten(#d98541,5%);
+            }
+            &:before {
+                opacity: 0.8;
+                background-image: url("../img/topdown_black.svg");
+            }
+            &.up:before {
+                background-image: none;
+                color: black;
+            }
+        }
+    }
+
+    .mains {
         background: #666462;
         height: 40px;
         padding: 5px 3px 0;
@@ -98,25 +149,12 @@
         top: 0;
         right: 0;
         .tab {
-            background: #8C837d linear-gradient(#8C837d, #807973);
-            border: 1px solid #575553;
-            border-width: 1px 1px 0 1px;
-            vertical-align: bottom;
-            height: 35px;
-            line-height: 35px;
-            color: #e5e5e5;
-            box-shadow: inset 0 1px rgba(255,255,255,0.25),
-                inset 0 -1px rgba(0,0,0,0.25);
-            padding-right: 30px;
             backface-visiblity: hidden;
             -ms-backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
             -moz-backface-visibility: hidden;
             transition: transform 0.15s;
-            -webkit-transition: -webkit-transform 0.15s;  
-            &:hover {
-                background: lighten(#8C837d,5%) linear-gradient(lighten(#8C837d,5%), lighten(#807973,5%));
-            }
+            -webkit-transition: -webkit-transform 0.15s; 
             &.reg, &.minis {
                -webkit-transform-origin: 50% 50% -34px; 
             }
@@ -130,8 +168,6 @@
                 transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
                 opacity: 1;
             }
-           
-            
         }
         .active.flipped .tab {
             &.reg {
@@ -149,34 +185,7 @@
                 //-webkit-transition: -webkit-transform 0.20s, opacity 0.10s linear;  
             }
         }
-        .plain .tab {
-            padding-right: 4px;
-        }
-        .active .tab {
-            background: #edece8 none;
-            box-shadow: inset 0 1px rgba(255,255,255,0.25);
-            color: #404040;
-            &.sub {
-                color: #d98541;
-            }
-            .close {
-                color: #737373;
-            }
-            .crunch {
-                background: #d98541 none;
-                &:hover {
-                    background-color: lighten(#d98541,5%);
-                }
-                &:before {
-                    opacity: 0.8;
-                    background-image: url("../img/topdown_black.svg");
-                }
-                &.up:before {
-                    background-image: none;
-                    color: black;
-                }
-            }
-        }
+        
         
         .minis {
             margin-bottom: -35px;
@@ -188,26 +197,39 @@
         .active .minis {
             background: #c7c6c3;
         }
-        .mini {
-            display: inline-block;
-            border-radius: 3px 3px 0 0;
-            height: 30px;
-            line-height: 28px;
-            border: 1px solid #a69b95;
-            border-bottom: 0;
-            padding: 0 12px;
-            color: #e5e5e5;
-            &.active {
-                background: #a69b95 linear-gradient(#a69b95, #99908a);
-            }
+    }
+    .mini {
+        display: inline-block;
+        border-radius: 3px 3px 0 0;
+        height: 30px;
+        line-height: 28px;
+        border: 1px solid #a69b95;
+        border-bottom: 0;
+        padding: 0 12px;
+        color: #e5e5e5;
+        &.active {
+            background: #a69b95 linear-gradient(#a69b95, #99908a);
         }
-        .active .mini {
-            color: #404040;
-            border-color: lighten(#c7c6c3,5%);
-            &.active {
-                border-color: #bfbebb;
-                background: #edece8;            
-            }
+    }
+    .active .mini {
+        color: #404040;
+        border-color: lighten(#c7c6c3,5%);
+        &.active {
+            border-color: #bfbebb;
+            background: #edece8;            
+        }
+    }
+    
+    .subs {
+        position: absolute;
+        width: 100%;
+        top: 40px;
+        background: #fafaf9 linear-gradient(#edece8, #fafaf9);
+        border-bottom: 1px solid #d5d5d5;
+        height: 35px;
+        overflow: hidden;
+        .tab {
+            vertical-align: bottom;
         }
     }
 }

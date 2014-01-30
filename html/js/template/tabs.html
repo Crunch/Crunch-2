@@ -1,11 +1,26 @@
-
+<div class="mains">
 {{ #files:i }}
 {{ >tab }}
 {{ /files }}
+</div>
+
+
+{{ #files:i }}
+	{{ #activeTabIndex == i && flipped && crunchable }}
+	<div class="subs" intro="slide:{duration: 100, delay:100}" outro="slide:100">
+	{{ #collection:j }}
+		{{ # j!=0 && !output }}
+		{{ >subtab }}
+		{{ / }}
+	{{ /collection }}
+	</div>
+	{{ /activeTabIndex }}
+{{ /files }}
+
 
 
 <!-- {{>tab}} -->
-<div on-click="activate" class="tab-out {{ activeTabIndex == i ? 'active' : ''}} {{hasCompiler ? '' : 'plain'}} {{flipped ? 'flipped' : ''}}">
+<div on-click="activate" style="min-width: {{ maxLength(collection) }};" class="tab-out {{ activeTabIndex == i ? 'active' : ''}} {{hasCompiler ? '' : 'plain'}} {{flipped ? 'flipped' : ''}}">
 	{{ #hasCompiler }}
 	<div class="tab minis">
 		{{ #collection:j }}
@@ -26,3 +41,12 @@
 	</div>
 </div> 
 <!-- {{/tab}} -->
+
+<!-- {{>subtab}} -->
+<div on-click="select" class="tab-out {{ activeIndex == j ? 'active' : ''}} plain">
+	<div class="tab reg">
+		<b class="close"></b>
+		<span>{{ name }}</span>
+	</div>
+</div> 
+<!-- {{/subtab}} -->
