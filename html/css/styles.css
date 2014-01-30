@@ -503,6 +503,16 @@ u {
   max-width: 100%;
   text-overflow: ellipsis;
 }
+.tabs .tab.sub > span:before {
+  font-family: Verdana, Geneva;
+  content: 'L';
+  font-size: 9px;
+  display: inline-block;
+  padding-right: 2px;
+  position: relative;
+  top: -3px;
+  opacity: 0.5;
+}
 .tabs .tab .crunch {
   position: absolute;
   top: 0;
