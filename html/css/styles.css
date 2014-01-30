@@ -648,7 +648,7 @@ u {
   background: #fafaf9 linear-gradient(#edece8, #fafaf9);
   border-bottom: 1px solid #d5d5d5;
   height: 35px;
-  overflow: hidden;
+  /*    overflow: hidden; */
 }
 .tabs .subs .tab {
   vertical-align: bottom;
