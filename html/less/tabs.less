@@ -133,7 +133,7 @@
            
             
         }
-        .flipped .tab {
+        .active.flipped .tab {
             &.reg {
                 -webkit-transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
                 transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
@@ -156,6 +156,9 @@
             background: #edece8 none;
             box-shadow: inset 0 1px rgba(255,255,255,0.25);
             color: #404040;
+            &.sub {
+                color: #d98541;
+            }
             .close {
                 color: #737373;
             }

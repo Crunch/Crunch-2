@@ -1,19 +1,28 @@
 
+{{ #files:i }}
+{{ >tab }}
+{{ /files }}
+
+
 <!-- {{>tab}} -->
-<div class="tab-out {{tabActive ? 'active' : ''}} {{hasCompiler ? '' : 'plain'}}">
+<div on-click="activate" class="tab-out {{ activeTabIndex == i ? 'active' : ''}} {{hasCompiler ? '' : 'plain'}} {{flipped ? 'flipped' : ''}}">
 	{{ #hasCompiler }}
 	<div class="tab minis">
-		{{ #minis:i }}
-		<div class="mini {{ i == activeMiniIndex ? 'active' : '' }}">{{ name }}</div>
-		{{ /minis }}
-		<b class="crunch up"></b>
+		{{ #collection:j }}
+		{{ # j==0 || output }}
+		<div on-click="select" class="mini {{ j == activeIndex ? 'active' : '' }}">{{ type.toUpperCase() }}</div>
+		{{ / }}
+		{{ /collection }}
+		<b class="crunch up" on-click="flipdown"></b>
 	</div>
 	{{ /hasCompiler }}
 	
-	<div class="tab reg">
+	<div class="tab reg {{ activeIndex != 0 ? 'sub' : ''}}">
 		<b class="close"></b>
-		<span>active.less</span>
-		<b class="crunch"></b>
+		<span>{{ collection[activeIndex].name }}</span>
+		{{ #hasCompiler }}
+		<b class="crunch" on-click="flipup"></b>
+		{{ /hasCompiler }}
 	</div>
 </div> 
 <!-- {{/tab}} -->

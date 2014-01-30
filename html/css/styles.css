@@ -562,14 +562,14 @@ u {
   transform: perspective(600px) rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
   opacity: 1;
 }
-.tabs .files .flipped .tab.reg {
+.tabs .files .active.flipped .tab.reg {
   -webkit-transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
   transform: perspective(600px) rotateX(-91deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
   opacity: 0;
   transition: transform 0.15s, opacity 0.05s linear 0.10s;
   -webkit-transition: -webkit-transform 0.15s, opacity 0.05s linear 0.1s;
 }
-.tabs .files .flipped .tab.minis {
+.tabs .files .active.flipped .tab.minis {
   -webkit-transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
   transform: perspective(600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-17px);
   opacity: 1;
@@ -581,6 +581,9 @@ u {
   background: #edece8 none;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.25);
   color: #404040;
+}
+.tabs .files .active .tab.sub {
+  color: #d98541;
 }
 .tabs .files .active .tab .close {
   color: #737373;

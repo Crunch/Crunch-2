@@ -1,40 +1,38 @@
-def(['lib/lodash', 'crunch/core', 'text!template/tab.html'], function(_, Crunch, tab) {
-	Crunch.UI.Tabs = (function() {
+def(['lib/lodash', 'text!template/tabs.html', 'lib/ractive.min'], function(_, tabs, Ractive) {
+	var Tabs = function() {
 		
-		// Create a new tab
+		// Create the tabs
 		// very much WIP, likely to change
-		function newTab(data) {
-			var defaults = {
-				tabActive: true
-				, hasCompiler: true
-				, minis: [
-					// Will we ever need more than 2 minis? 
-					{
-						name: "LESS"
-						, type: "i"  //input
-						, filepath: ""
-					}
-					, {
-						name: "CSS"
-						, type: "o"  //output
-						, filepath: ""
-					}
-				]
-				, activeMiniIndex: 0
-			};
-			
-			var ractive = new Ractive({
-				el: container
-				, template: tab
-				, data: data
-				
-			});
-			return ractive;
-		}
-		return {
-			"new": newTab
-		}
-	})();
+		this.ractive = null;
+	};
+	Tabs.prototype.create = function(Crunch) {
+		var ractive = new Ractive({
+			el: document.getElementById('files')
+			, template: tabs
+			, magic: true // auto-update when the model changes
+			, data: Crunch.Session.state.openFiles  // hmm... we need to validate files first
+		});
+		ractive.on({
+			activate: function(event) {
+				ractive.set({ activeTabIndex: event.index.i });
+			}
+			, select: function(event) {
+				ractive.set("files." + event.index.i + ".activeIndex", event.index.j);
+			}
+			, flipup: function(event) {
+				if(ractive.data.activeTabIndex == event.index.i)
+					ractive.set(event.keypath + ".flipped", true);
+			}
+			, flipdown: function(event) {
+				ractive.set(event.keypath + ".flipped", false);
+			}
+		});
+		this.ractive = ractive;
+		console.log(this.ractive);
+	};
+	Tabs.prototype.update = function() {
+		
+	};
 
-	return Crunch.UI.Tabs;
+	return new Tabs;
 });

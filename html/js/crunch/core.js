@@ -1,6 +1,14 @@
-def(['json!plugins/meta.json', 'lib/lodash'], function(pluginSettings, _) {
+def([
+	'lib/lodash'
+	, 'json!plugins/meta.json'
+	, 'crunch/prefs'
+	, 'crunch/session'
+	, 'crunch/tabs'], function(_, pluginSettings, Prefs, Session, Tabs) {
+	
 	var Crunch = {
-		UI: {}
+		UI: {
+			Tabs: Tabs
+		}
 	};
 	
 	console.log('Loading plugins...');
@@ -15,6 +23,11 @@ def(['json!plugins/meta.json', 'lib/lodash'], function(pluginSettings, _) {
 		});
 	});
 	
+	Crunch.Prefs = Prefs;
+	Crunch.Session = Session;
+	
 	console.log(Crunch);
+	
+	
 	return Crunch;
 });

@@ -17,22 +17,16 @@
 	curl(curlCfg, ['lib/ractive.min', 'js!lib/ace/ace', 'link!css/styles.css']).then(function ($) {
 		
 		// init the app
-		curl(['crunch/core', 'crunch/prefs', 'crunch/session', 'domReady!']).then(function() {
-			init();	
+		curl(['crunch/core', 'domReady!']).then(function(Crunch) {
+			init(Crunch);
 		});
 		
 	});
 
 
-	function init() {
+	function init(Crunch) {
+		Crunch.UI.Tabs.create(Crunch);
+		
 		document.body.className = 'loaded';
-
-		// $('body').addClass('loaded');
-		// $('.crunch').click(function() {
-		// 	$(this).closest('.tab-out').toggleClass('flipped');
-		// });
-		// $('.tab-out').click(function() {
-		// 	$(this).addClass('active').siblings().removeClass('active flipped');
-		// });
 	}
 })(this);
