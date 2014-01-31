@@ -16,14 +16,17 @@
 		, defineName: 'def'
 	};
 
-	curl(curlCfg, ['crunch/core', 'domReady!', 'lib/ractive/Ractive-transitions-slide']).then(function(Crunch) {
+	curl(curlCfg, ['crunch/core'
+		, 'domReady!'
+		, 'lib/ractive/Ractive-transitions-slide'
+		, 'lib/ractive/Ractive-transitions-fly'
+		]).then(function(Crunch) {
 		init(Crunch);
 	});
 
 
 	function init(Crunch) {
 		Crunch.UI.Tabs.create(Crunch);
-		
 		document.body.className = 'loaded';
 	}
 })(this);

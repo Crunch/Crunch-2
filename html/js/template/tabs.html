@@ -20,7 +20,8 @@
 
 
 <!-- {{>tab}} -->
-<div on-click="activate" style="min-width: {{ maxLength(collection) }};" class="tab-out {{ activeTabIndex == i ? 'active' : ''}} {{hasCompiler ? '' : 'plain'}} {{flipped ? 'flipped' : ''}}">
+<div on-click="activate" intro="fly:{x:0,y:40,duration:150}"
+style="min-width: {{ maxLength(collection) }};" class="tab-out {{ activeTabIndex == i ? 'active' : ''}} {{hasCompiler ? '' : 'plain'}} {{flipped ? 'flipped' : ''}}">
 	{{ #hasCompiler }}
 	<div class="tab minis">
 		{{ #collection:j }}

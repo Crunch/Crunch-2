@@ -22,7 +22,7 @@ def(['lib/lodash', 'text!template/tabs.html', 'Ractive'], function(_, tabs, Ract
 		var ractive = new Ractive({
 			el: document.getElementById('tabs')
 			, template: tabs
-			, magic: true // auto-update when the model changes
+			, magic: false // auto-update when the model changes.. doesn't work?
 			, data: Crunch.Session.state.openFiles  // hmm... we need to validate files first
 		});
 		ractive.on({
@@ -40,8 +40,38 @@ def(['lib/lodash', 'text!template/tabs.html', 'Ractive'], function(_, tabs, Ract
 				ractive.set(event.keypath + ".flipped", false);
 			}
 		});
-		this.ractive = ractive;
-		console.log(this.ractive);
+		this.topTabs = ractive;
+		console.log(this.topTabs);
+
+
+		// FOR TESTING!
+		var button = new Ractive({
+			el: document.getElementById('newtab')
+			, template: '<button on-click="doSomething">Create Tab!</button>'
+		});
+		button.on({
+			doSomething: function(event) {
+				Crunch.Session.state.openFiles.files.unshift({
+					project: 0
+					, activeIndex: 0 
+					, hasCompiler: true  
+					, crunchable: true 
+					, flipped: false 
+					, collection: [
+						{ type: "less", name: "newProject.less", path: "new/" }  
+						, { type: "css", output: true, name: "newProject.css", path: "new/" }
+						, { type: "less", name: "bootstrap.less", path: "new/" }
+						, { type: "less", name: "variables.less", path: "new/" }
+						, { type: "less", name: "mixins.less", path: "new/" }
+						, { type: "less", name: "grid.less", path: "new/" }
+					]
+				});
+				// huh, Ractive doesn't seem to update in magic mode...
+				ractive.update();
+			}
+		});
+		
+
 	};
 	Tabs.prototype.update = function() {
 		
