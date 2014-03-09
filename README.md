@@ -5,6 +5,6 @@ Is it a code editor? Is it a code compiler? **ANSWER: YES.**
 
 WIP
 ===
-We've only just begun.
+We've only just begun. Want to get involved? Contact @matthew-dean.
 
 
