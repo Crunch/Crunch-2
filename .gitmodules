@@ -1,0 +1,3 @@
+[submodule "html/granola"]
+	path = html/granola
+	url = git://github.com/Crunch/Granola.git
