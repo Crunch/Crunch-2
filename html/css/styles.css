@@ -641,6 +641,9 @@ u {
   padding: 0 12px;
   color: #e5e5e5;
 }
+.tabs .mini:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 .tabs .mini.active {
   background: #a69b95 linear-gradient(#a69b95, #99908a);
 }
@@ -652,7 +655,7 @@ u {
   border-color: #bfbebb;
   background: #edece8;
 }
-.tabs .subs {
+.subs {
   position: absolute;
   width: 100%;
   top: 40px;
@@ -660,9 +663,35 @@ u {
   background: #fafaf9 linear-gradient(#edece8, #fafaf9);
   box-shadow: inset 0 -1px #d5d5d5;
   height: 35px;
-}
-.tabs .subs .tab {
   vertical-align: bottom;
+}
+.subs:before {
+  display: inline-block;
+  content: '';
+  height: 29px;
+  width: 1px;
+}
+.subs .tab {
+  height: 29px;
+  border-color: #d6d5d2;
+  background: #ede8e4 linear-gradient(#ede8e4, #e6e5e1);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), inset 0 -1px #d5d5d5;
+  color: #808080;
+}
+.subs .tab > span {
+  font-size: 16px;
+  line-height: 24px;
+}
+.subs .tab .close:before {
+  line-height: 36px;
+}
+.subs .tab:hover {
+  background: #ede8e4 linear-gradient(#f7f5f3, #e6e5e1);
+  color: #676767;
+}
+.subs .active .tab {
+  background: #edece8 none;
+  color: #404040;
 }
 /*
 @keyframes TAB_MINI_ANIMATION {
