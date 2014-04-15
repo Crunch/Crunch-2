@@ -355,12 +355,39 @@ table {
   font-family: SymbolSet;
   src: url("fonts/ss-standard.woff") format("woff");
 }
-.search {
-  height: 40px;
-  line-height: 40px;
+.left-top {
+  background: #d98541;
+  border-top: 1px solid #e4aa7a;
+  border-bottom: 1px solid #825027;
+  height: 39px;
+  color: white;
+  line-height: 34px;
   position: absolute;
   left: 0;
   top: 0;
+  right: 0;
+  padding-left: 40px;
+  font-size: 20px;
+}
+.left-top:before {
+  font-family: SymbolSet;
+  content: '\25C5';
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  line-height: 41px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.search {
+  height: 35px;
+  line-height: 35px;
+  position: absolute;
+  left: 0;
+  top: 39px;
   right: 0;
   background: #4c5053;
   border-bottom: 1px solid #3d4042;
@@ -368,7 +395,7 @@ table {
 .search input {
   border: 0 none;
   background: transparent;
-  height: 40px;
+  height: 35px;
   width: 100%;
   padding-left: 40px;
   color: white;
@@ -379,12 +406,23 @@ table {
   font-family: SymbolSet;
   content: '\1F50E';
   width: 40px;
-  height: 40px;
+  height: 35px;
   font-size: 18px;
   text-align: center;
   color: #d98541;
-  line-height: 44px;
+  line-height: 40px;
   position: absolute;
+}
+.views,
+.views > div {
+  position: absolute;
+  top: 74px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.views > div {
+  overflow: auto;
 }
 /* apply a natural box layout model to all elements */
 *,
@@ -410,6 +448,7 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: opacity 0.1s;
   -webkit-transition: opacity 0.1s;
+  overflow: hidden;
 }
 body.loaded {
   opacity: 1;
@@ -423,6 +462,11 @@ u {
 .panel-left {
   background: #666462;
   border-right: 1px solid #474644;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 245px;
 }
 .panel-main {
   background: #edece8;
@@ -451,7 +495,7 @@ u {
   position: absolute;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 39px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -579,8 +623,8 @@ u {
 }
 .tabs .mains {
   background: #666462;
-  height: 40px;
-  padding: 5px 3px 0;
+  height: 39px;
+  padding: 4px 3px 0;
   position: absolute;
   left: 0;
   top: 0;
@@ -658,7 +702,7 @@ u {
 .subs {
   position: absolute;
   width: 100%;
-  top: 40px;
+  top: 39px;
   overflow: hidden;
   background: #fafaf9 linear-gradient(#edece8, #fafaf9);
   box-shadow: inset 0 -1px #d5d5d5;

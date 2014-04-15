@@ -13,6 +13,7 @@ body {
     -webkit-font-smoothing: antialiased;
     transition: opacity 0.1s;
     -webkit-transition: opacity 0.1s; 
+    overflow: hidden;
     &.loaded {
         opacity: 1;
     }
@@ -24,6 +25,11 @@ b, i, u {
 .panel-left { 
     background: #666462;
     border-right: 1px solid #474644;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 245px;
 }
 .panel-main {
     background: #edece8;
