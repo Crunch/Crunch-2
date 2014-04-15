@@ -50,23 +50,80 @@
         content: '\1F50E';
         width: 40px;
         height: 35px;
-        font-size: 18px;
+        font-size: 16px;
         text-align: center;
         color: #d98541;
         line-height: 40px;
         position: absolute;
+        left: 2px;
     }
 }
 .views {
+    top: 74px;
     &, & > div {
         position: absolute;
-        top: 74px;
         left: 0;
         bottom: 0;
         width: 100%;
     }
     > div {
+        padding: 15px;
+        top: 0;
         overflow: auto;
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    .tree {
+        color: #f9f8f5;
+        font-size: 16px;
+        line-height: 24px;
+        .no-text-highlighting();
+        li { position: relative; }
+        i { 
+            display: inline-block;
+            width: 20px;
+            color: #999693;
+            font-size: 12px;
+        }
+        .folder {
+            padding-left: 20px;
+            > i { width: 0; }
+            > i:before {
+                content: '\25BB';
+                font-family: SymbolSet;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                left: 0;
+                top: 2px;
+                font-size: 10px;
+                transition: transform 0.15s;
+                -webkit-transition: -webkit-transform 0.15s; 
+                -webkit-transform-origin: 5px 11px;
+                transform-origin: 5px 11px;
+                color: white;
+            }
+            &.open > i:before {
+                //content: 'F501';
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+            > s {
+                font-weight: bold;
+                &:before {
+                    display: inline-block;
+                    content: '\1F4C1';
+                    font-size: 13px;
+                    font-family: SymbolSet;
+                    position: relative;
+                    top: 2px;
+                    color: #999693;
+                    width: 20px;
+                }
+            }
+        }
     }
 }
 

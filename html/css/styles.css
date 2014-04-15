@@ -407,22 +407,89 @@ table {
   content: '\1F50E';
   width: 40px;
   height: 35px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   color: #d98541;
   line-height: 40px;
   position: absolute;
+  left: 2px;
+}
+.views {
+  top: 74px;
 }
 .views,
 .views > div {
   position: absolute;
-  top: 74px;
   left: 0;
   bottom: 0;
   width: 100%;
 }
 .views > div {
+  padding: 15px;
+  top: 0;
   overflow: auto;
+  display: none;
+}
+.views > div.active {
+  display: block;
+}
+.views .tree {
+  color: #f9f8f5;
+  font-size: 16px;
+  line-height: 24px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.views .tree li {
+  position: relative;
+}
+.views .tree i {
+  display: inline-block;
+  width: 20px;
+  color: #999693;
+  font-size: 12px;
+}
+.views .tree .folder {
+  padding-left: 20px;
+}
+.views .tree .folder > i {
+  width: 0;
+}
+.views .tree .folder > i:before {
+  content: '\25BB';
+  font-family: SymbolSet;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 10px;
+  transition: transform 0.15s;
+  -webkit-transition: -webkit-transform 0.15s;
+  -webkit-transform-origin: 5px 11px;
+  transform-origin: 5px 11px;
+  color: white;
+}
+.views .tree .folder.open > i:before {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+.views .tree .folder > s {
+  font-weight: bold;
+}
+.views .tree .folder > s:before {
+  display: inline-block;
+  content: '\1F4C1';
+  font-size: 13px;
+  font-family: SymbolSet;
+  position: relative;
+  top: 2px;
+  color: #999693;
+  width: 20px;
 }
 /* apply a natural box layout model to all elements */
 *,
@@ -455,10 +522,21 @@ body.loaded {
 }
 b,
 i,
-u {
+u,
+s {
   font-weight: normal;
   font-style: normal;
+  text-decoration: none;
 }
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* ul ul {
+    padding-left: 20px;
+} */
 .panel-left {
   background: #666462;
   border-right: 1px solid #474644;

@@ -18,10 +18,27 @@ body {
         opacity: 1;
     }
 }
-b, i, u {
+b, i, u, s {
     font-weight: normal;
     font-style: normal;
+    text-decoration: none;
 }
+ul, li {
+    list-style-type: none;
+    padding: 0; margin: 0;
+}
+.no-text-highlighting() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* ul ul {
+    padding-left: 20px;
+} */
+
 .panel-left { 
     background: #666462;
     border-right: 1px solid #474644;

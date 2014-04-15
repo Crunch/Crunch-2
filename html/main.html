@@ -21,14 +21,37 @@
 <body>
 	<div class="panel-left">
 		<div class="left-top">
-			<div class="title">style.less</div>
+			<div class="title">crunch_2</div>
 		</div>
 		<div class="search"><input type="text" /></div>
 		<div class="views">
-			<div class="projects"></div>
-			<div class="files"></div>
-			<div class="crunchable">
-				
+			<div class="projects tree"></div>
+			<div class="files tree active">
+				<ul>
+					<li class="folder open"><i onclick="this.parentNode.classList.toggle('open')"></i><s ondblclick="this.parentNode.classList.toggle('open')">crunch_2</s>
+						<ul>
+							<li><i>LS</i><s>buttons.less</s></li>
+							<li><i>LS</i><s>style.less</s></li>
+							<li><i>JS</i><s>script.js</s></li>
+							<li><i>CF</i><s>script.coffee</s></li>
+							<li class="folder"><i></i><s>ui</s></li>
+							<li class="folder"><i></i><s>views</s></li>
+							<li class="folder"><i></i><s>lib</s></li>
+						</ul>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="crunchable tree">
+				<ul>
+					<li><i>LS</i>style.less</li>
+					<li><i>CS</i>style.css</li>
+					<li>
+						<ul>
+							<li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
 		<div class="errors"></div>
