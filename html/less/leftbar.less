@@ -76,7 +76,7 @@
         }
     }
     .tree {
-        color: #f9f8f5;
+        color: lighten(#b2a79f,10%);
         font-size: 16px;
         line-height: 24px;
         .no-text-highlighting();
@@ -91,6 +91,18 @@
             white-space: nowrap;
             display: inline-block;
             padding-right: 20px;
+            &:hover s {
+                color: lighten(#b2a79f,20%);
+                cursor: default;
+            }
+            &.edit {  // file is being edited
+                color: white;
+                > s { font-weight: bold; }
+            }
+            
+        }
+        span.edit i {
+            color: lighten(#999693,10%);
         }
         .folder {
             padding-left: 20px;
@@ -108,7 +120,8 @@
                 -webkit-transition: -webkit-transform 0.15s; 
                 -webkit-transform-origin: 5px 11px;
                 transform-origin: 5px 11px;
-                color: white;
+                //color: white;
+                color: lighten(#b2a79f,20%)
             }
             &.open > span > i:before {
                 //content: 'F501';
