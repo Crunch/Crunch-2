@@ -79,7 +79,6 @@
         color: #f9f8f5;
         font-size: 16px;
         line-height: 24px;
-        white-space: nowrap;
         .no-text-highlighting();
         li { position: relative; }
         i { 
@@ -88,10 +87,15 @@
             color: #999693;
             font-size: 12px;
         }
+        span {
+            white-space: nowrap;
+            display: inline-block;
+            padding-right: 20px;
+        }
         .folder {
             padding-left: 20px;
-            > i { width: 0; }
-            > i:before {
+            > span > i { width: 0; }
+            > span > i:before {
                 content: '\25BB';
                 font-family: SymbolSet;
                 width: 20px;
@@ -106,12 +110,12 @@
                 transform-origin: 5px 11px;
                 color: white;
             }
-            &.open > i:before {
+            &.open > span > i:before {
                 //content: 'F501';
                 transform: rotate(90deg);
                 -webkit-transform: rotate(90deg);
             }
-            > s {
+            > span > s {
                 font-weight: bold;
                 &:before {
                     display: inline-block;

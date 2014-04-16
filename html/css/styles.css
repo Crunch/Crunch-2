@@ -352,6 +352,12 @@ table {
   src: url("fonts/SourceSansPro-Regular.otf.woff") format("woff");
 }
 @font-face {
+  font-family: SourceSans;
+  font-weight: bold;
+  font-style: normal;
+  src: url("fonts/SourceSansPro-Bold.otf.woff") format("woff");
+}
+@font-face {
   font-family: SymbolSet;
   src: url("fonts/ss-standard.woff") format("woff");
 }
@@ -437,7 +443,6 @@ table {
   color: #f9f8f5;
   font-size: 16px;
   line-height: 24px;
-  white-space: nowrap;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -454,13 +459,18 @@ table {
   color: #999693;
   font-size: 12px;
 }
+.views .tree span {
+  white-space: nowrap;
+  display: inline-block;
+  padding-right: 20px;
+}
 .views .tree .folder {
   padding-left: 20px;
 }
-.views .tree .folder > i {
+.views .tree .folder > span > i {
   width: 0;
 }
-.views .tree .folder > i:before {
+.views .tree .folder > span > i:before {
   content: '\25BB';
   font-family: SymbolSet;
   width: 20px;
@@ -475,14 +485,14 @@ table {
   transform-origin: 5px 11px;
   color: white;
 }
-.views .tree .folder.open > i:before {
+.views .tree .folder.open > span > i:before {
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
 }
-.views .tree .folder > s {
+.views .tree .folder > span > s {
   font-weight: bold;
 }
-.views .tree .folder > s:before {
+.views .tree .folder > span > s:before {
   display: inline-block;
   content: '\1F4C1';
   font-size: 13px;
