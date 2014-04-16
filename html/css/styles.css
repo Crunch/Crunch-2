@@ -437,6 +437,7 @@ table {
   color: #f9f8f5;
   font-size: 16px;
   line-height: 24px;
+  white-space: nowrap;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
