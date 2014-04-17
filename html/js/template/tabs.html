@@ -35,7 +35,9 @@ style="min-width: {{ maxLength(collection) }};" class="tab-out {{ activeTabIndex
 	
 	<div class="tab reg {{ activeIndex != 0 ? 'sub' : ''}}">
 		<b class="close"></b>
-		<span title="/foo/bar/{{ collection[activeIndex].path }}{{ collection[activeIndex].name }}">{{ collection[activeIndex].name }}</span>
+		{{# { c: collection[activeIndex] } }}
+		<span title="/foo/bar/{{ c.path }}{{ c.name }}">{{ c.name }}</span>
+		{{/ }}
 		{{ #hasCompiler }}
 		<b class="crunch" on-click="flipup"></b>
 		{{ /hasCompiler }}
