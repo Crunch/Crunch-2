@@ -30,56 +30,56 @@ def(function() {
 	}
 	// Only the first project in this object is visible in the sidebar.
 	// See Google documentation on how this will work
-	Session.set("openProjects", [
-		{
-			path: "/site1/"
-			, fileSystem: 'node' // What filesystem plugin are we using to load this?
-		}
-		, {
-			path: "/site2/"
-			, fileSystem: 'node'
-		}
-	]);
-	Session.set("openFiles", {
-		activeTabIndex: 0
-		, files: [{
-			project: 0
-			, activeIndex: 0 // activeIndex == 0 therefore the "LESS" tab is active
-			, hasCompiler: true  // this will eventually be determined dynamically, just for testing
-			, crunchable: true // this also is dependent on plugins
-			, flipped: false // this also shouldn't be necessary, but haven't figured out how to add it in the right place in Ractives
-			, collection: [
-			// we have an explicit type property because we may want to "cast" a file as a certain type
-			// note: paths are relative to the project root to avoid redundant storage
-				{ type: "less", name: "style.less", path: "bar/" }  
-				// the output property creates the "mini" tab association, amongst other things 
-				, { type: "css", output: true, name: "style.css", path: "bar/" }
-				, { type: "less", name: "mixins.less", path: "bar/" }
-			]
-		}
-		, {
-			project: 0
-			, activeIndex: 2 // the sub-file mixins.less is active
-			, hasCompiler: true
-			, crunchable: true
-			, flipped: false
-			, collection: [
-				{ type: "less", name: "bootstrap.less", path: "less/" }
-				, { type: "css", output: true, name: "bootstrap.css", path: "less/" }
-				, { type: "less", name: "mixins.less", path: "less/" }
-			]
-		}
-		, {
-			project: 0
-			, activeIndex: 1  // the JS mini-tab is active
-			, flipped: false
-			, hasCompiler: true
-			, crunchable: false
-			, collection: [ { type: "coffee", name: "thisIsALongFileName.coffee", path: "" }
-				, { type: "js", output: true, name: "thisIsALongFileName.js", path: "js/"}
-			]
-		}
-		, { project: 1, activeIndex: 0, collection: [{ type: "txt", name: "plain.txt", path: "" }] }
-	]});
+	// Session.set("openProjects", [
+	// 	{
+	// 		path: "/site1/"
+	// 		, fileSystem: 'node' // What filesystem plugin are we using to load this?
+	// 	}
+	// 	, {
+	// 		path: "/site2/"
+	// 		, fileSystem: 'node'
+	// 	}
+	// ]);
+	// Session.set("openFiles", {
+	// 	activeTabIndex: 0
+	// 	, files: [{
+	// 		project: 0
+	// 		, activeIndex: 0 // activeIndex == 0 therefore the "LESS" tab is active
+	// 		, hasCompiler: true  // this will eventually be determined dynamically, just for testing
+	// 		, crunchable: true // this also is dependent on plugins
+	// 		, flipped: false // this also shouldn't be necessary, but haven't figured out how to add it in the right place in Ractives
+	// 		, collection: [
+	// 		// we have an explicit type property because we may want to "cast" a file as a certain type
+	// 		// note: paths are relative to the project root to avoid redundant storage
+	// 			{ type: "less", name: "style.less", path: "bar/" }  
+	// 			// the output property creates the "mini" tab association, amongst other things 
+	// 			, { type: "css", output: true, name: "style.css", path: "bar/" }
+	// 			, { type: "less", name: "mixins.less", path: "bar/" }
+	// 		]
+	// 	}
+	// 	, {
+	// 		project: 0
+	// 		, activeIndex: 2 // the sub-file mixins.less is active
+	// 		, hasCompiler: true
+	// 		, crunchable: true
+	// 		, flipped: false
+	// 		, collection: [
+	// 			{ type: "less", name: "bootstrap.less", path: "less/" }
+	// 			, { type: "css", output: true, name: "bootstrap.css", path: "less/" }
+	// 			, { type: "less", name: "mixins.less", path: "less/" }
+	// 		]
+	// 	}
+	// 	, {
+	// 		project: 0
+	// 		, activeIndex: 1  // the JS mini-tab is active
+	// 		, flipped: false
+	// 		, hasCompiler: true
+	// 		, crunchable: false
+	// 		, collection: [ { type: "coffee", name: "thisIsALongFileName.coffee", path: "" }
+	// 			, { type: "js", output: true, name: "thisIsALongFileName.js", path: "js/"}
+	// 		]
+	// 	}
+	// 	, { project: 1, activeIndex: 0, collection: [{ type: "txt", name: "plain.txt", path: "" }] }
+	// ]});
 	return Session;
 });
