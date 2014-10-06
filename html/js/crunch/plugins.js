@@ -1,4 +1,4 @@
-def(['json!plugins/meta.json', 'crunch/files'], function(pluginSettings, Files) {
+def(['lib/lodash', 'json!plugins/meta.json', 'crunch/files'], function(_, pluginSettings, Files) {
 	
 	console.log('Loading plugins...');
 	var Plugins = {
@@ -40,6 +40,7 @@ def(['json!plugins/meta.json', 'crunch/files'], function(pluginSettings, Files) 
 		
 	};
 	Plugins.init = function() {
+		console.log('Initializing plugins...');
 		_.forEach(Plugins.settings, function(obj, plugin) {
 			console.log('Loading ' + plugin + ' plugins...');
 			_.forEach(obj, function(path, key) {
