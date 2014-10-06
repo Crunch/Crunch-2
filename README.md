@@ -1,10 +1,7 @@
-Crunch 2!
-=======
-
-Is it a code editor? Is it a code compiler? **ANSWER: YES.**
-
-WIP
+Want to help build Crunch 2?
 ===
-We've only just begun. Want to get involved? Contact Matthew Dean on Twitter: http://twitter.com/matthewdeaners
+![Magic Tabs™](demo/MagicTabs.gif)
+
+Contact Matthew Dean on Twitter: http://twitter.com/matthewdeaners
 
 
