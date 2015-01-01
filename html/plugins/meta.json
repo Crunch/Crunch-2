@@ -1,8 +1,0 @@
-{
-	"compilers": {
-		"less": "compilers/less/"
-	}
-	, "fileSystem": {
-		"node": "filesystem/node.js"
-	}
-}
