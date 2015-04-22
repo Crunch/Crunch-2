@@ -1,7 +1,5 @@
 Crunch 2
 ===
-![Magic Tabs™](demo/MagicTabs.gif)
-
 The quirky editor and compiler for awesome web people.
 
 Alpha testing
