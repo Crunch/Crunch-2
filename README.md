@@ -1,6 +1,6 @@
 Crunch 2
 ===
-The quirky editor and compiler for awesome web people.
+The world's most popular Less editor just added a whole pile of awesome.
 
 Alpha testing
 ====
