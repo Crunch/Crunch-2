@@ -1,6 +1,6 @@
 {
   "name": "Crunch2",
-  "version": "2.0.0-pre-alpha.14",
+  "version": "2.0.0-pre-alpha.15",
   "description": "The quirky editor and compiler for the web.",
   "packages": {
     "osx64": "https://raw.githubusercontent.com/Crunch/Crunch-2/releases/",
