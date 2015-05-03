@@ -7,10 +7,10 @@ Join the chat about Crunch 2 at https://gitter.im/Crunch/Crunch-2
 
 Alpha testing
 ====
-Alpha testing will begin soon! Watch this space for details.
+Alpha testing is starting! If you want to be an alpha tester, join the Facebook group! https://www.facebook.com/groups/crunchtesters/
 
 Filing issues
 ====
 Please file issues to https://github.com/Crunch/Crunch-2/issues.
 
-Be sure to include the full version number (like 2.0.0-pre-alpha.13).
+Be sure to include the full version number (like 2.0.0-pre-alpha.15).
