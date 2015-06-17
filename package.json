@@ -1,10 +1,10 @@
 {
   "name": "Crunch2",
-  "version": "2.0.1-alpha.1",
+  "version": "2.0.1-alpha.2",
   "description": "The quirky editor and compiler for awesome people.",
   "packages": {
-    "osx64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.1-alpha.1/Crunch2.dmg",
-    "win32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.1-alpha.1/CrunchSetup.exe", 
+    "osx64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.1-alpha.2/Crunch2.dmg",
+    "win32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.1-alpha.2/CrunchSetup.exe", 
     "linux32": "https://raw.githubusercontent.com/Crunch/Crunch-2/releases/",
     "linux64": "https://raw.githubusercontent.com/Crunch/Crunch-2/releases/"
   }
