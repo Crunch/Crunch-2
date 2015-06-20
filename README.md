@@ -13,4 +13,4 @@ Filing issues
 ====
 Please file issues to https://github.com/Crunch/Crunch-2/issues.
 
-Be sure to include the full version number (like 2.0.0-pre-alpha.15).
+Be sure to include the full version number (like 2.0.0-alpha.4).
