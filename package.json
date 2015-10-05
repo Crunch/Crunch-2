@@ -1,18 +1,18 @@
 {
   "name": "Crunch2",
-  "version": "2.0.5-beta.5",
+  "version": "2.0.5-beta.6",
   "description": "The editor and compiler app for awesome people.",
   "packages": {
-    "osx64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.5/Crunch2.dmg",
-    "win32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.5/CrunchSetup.exe", 
-    "linux32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.5/Crunch2_linux32.deb",
-    "linux64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.5/Crunch2_linux64.deb"
+    "osx64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.7/Crunch2.dmg",
+    "win32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.7/CrunchSetup.exe", 
+    "linux32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.6/Crunch2_linux32.deb",
+    "linux64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.6/Crunch2_linux64.deb"
   },
   "edge": {
-    "version": "2.0.5-beta.6",
+    "version": "2.0.5-beta.7",
     "packages": {
-      "osx64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.6/Crunch2.dmg",
-      "win32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.6/CrunchSetup.exe", 
+      "osx64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.7/Crunch2.dmg",
+      "win32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.7/CrunchSetup.exe", 
       "linux32": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.6/Crunch2_linux32.deb",
       "linux64": "https://github.com/Crunch/Crunch-2/releases/download/v2.0.5-beta.6/Crunch2_linux64.deb"
     }
