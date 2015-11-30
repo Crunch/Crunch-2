@@ -2,7 +2,7 @@ Crunch 2
 ===
 The world's most popular Less editor and compiler now does a whole lot more than Less.
 
-Forget Gulp. Forget Grunt. No npm install. No terminal commands. Just write in one language. Save in an another.
+Forget Gulp. Forget Grunt. No npm install. No terminal commands. Just write in one language and save in an another.
 
 http://getcrunch.co/
 
