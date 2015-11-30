@@ -1,6 +1,10 @@
 Crunch 2
 ===
-The world's most popular Less editor and compiler now does a whole lot more than Less. And also the Less has more. And Less is free. But I'm not saying less is free. More is free, but Less is free. ...Just go get it. http://getcrunch.co/
+The world's most popular Less editor and compiler now does a whole lot more than Less.
+
+Forget Gulp. Forget Grunt. No npm install. No terminal commands. Just write in one language. Save in an another.
+
+http://getcrunch.co/
 
 ---
 
