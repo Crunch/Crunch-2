@@ -1,20 +1,24 @@
 Crunch 2
 ===
-The world's most popular Less editor and compiler now does a whole lot more than Less.
+TL;DR update -- Crunch 2 Pro is no longer maintained and is now free!
+-----
+When I first started working on Crunch 2, code editors were, to some degree, expensive to get anything that was worth anything. In the weeks and months right before I rolled out the non-beta version of Crunch 2, Adobe released a free code editor. Then Github. Then Microsoft. All cross-platform and on the same technology stack that Crunch 2 uses.
 
-Forget Gulp. Forget Grunt. Say goodbye to ```npm install```. Just write in one language and save in another.
+Crunch 2 does more than your average code editor, in terms of compiling your code. But it's the editor parts that took the most work, and which are hardest to maintain. Many modern editors do a much better job at that part.
+
+I hope to soon release the source code for Crunch 2 once I clean out things like private keys for code signing.
+
+I'm considering doing a v3 of Crunch which are commercial, quality-grade extensions on top of a modified version of Microsoft's VSCode. If so, licenses purchased for Crunch 2 would be redeemable for Crunch 3.
+
+But in the meantime, I don't have the resources to maintain Crunch 2, so use it however you wish!
+
+If you would be interested in a (commercial) v3 of Crunch which would be much, much more advanced in terms of code editing and would be essentially extensible with a huge library of existing extensions, let me know on the Facebook group - https://www.facebook.com/groups/crunchtesters/
+
+Thanks for your support of Crunch 2!
 
 http://getcrunch.co/
 
 ---
-
-Join the chat about Crunch 2 at https://gitter.im/Crunch/Crunch-2
-
-[![Join the chat at https://gitter.im/Crunch/Crunch-2](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Crunch/Crunch-2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-Beta testing
-====
-If you want to be an beta tester, join the Facebook group! https://www.facebook.com/groups/crunchtesters/
 
 Filing issues
 ====
