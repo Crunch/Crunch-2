@@ -1,0 +1,52 @@
+<div class="left-top">
+	<div class="title">Folders</div>
+	<b class="right" on-click="add"><i class="ico-folder-plus"></i></b>
+</div>
+
+<div class="scrollable">
+{{#if projects.length > 0 && !projects[0].root }}
+
+
+	{{ # _.filter(projects, { 'open': true }): i  }}
+		
+		{{#if !root }}		
+			<div class="open">
+				{{ #if i==0 }}
+					<h1>Open</h1>
+				{{ /if }}
+				
+				{{>project}}
+			
+			</div>
+		{{/if}}
+		
+	{{/}}
+
+	{{ # _.filter(projects, { 'open': false }):i }}
+		{{#if !root }}	
+			<div class="recent">
+				{{ #if i==0 }}
+				<h1>Recent</h1>
+				{{ /if }}
+
+				{{>project}}
+			
+			</div>
+		{{/if}}
+	{{ / }}
+{{else}}
+	<div class="vertical-message">
+		Open a project/website folder to get started!
+		<b class="btn primary" on-click="add" style="clear: both; margin: 20px 20px; font-size: 16px; line-height: 2.3"><i class="ico-folder-plus"></i> <span>Open Folder</span></b>
+	</div>
+{{/if}}
+
+</div>
+
+{{#partial project}}
+<div intro-outro='slide: 150' on-click="select: {{.}}" data-path="{{ .path }}" class="project {{ .loading ? 'loading' : '' }}">
+	<s class="path folders">{{{ getFolders(.path) }}}</s>
+	<s class="name">{{ .name }}</s>
+	<i class="icon-left ico-folder{{ .open ? '-open' : '' }}"></i>
+</div> 
+{{/partial}}

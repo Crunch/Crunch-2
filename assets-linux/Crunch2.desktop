@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name="Crunch 2"
+Icon=/opt/Crunch2/icon_256.png
+Exec="/opt/Crunch2/Crunch 2"
+Comment=Crunch 2
+Categories=Development;IDE;
+Terminal=false

@@ -2,6 +2,7 @@
   "name": "Crunch2",
   "version": "2.5.1",
   "description": "The editor and compiler app for awesome people.",
+  "main": "src/tests.html",
   "packages": {
     "osx64": "https://github.com/Crunch/Crunch-2/releases/download/v2.5.1/Crunch2.dmg",
     "win32": "https://github.com/Crunch/Crunch-2/releases/download/v2.5.1/CrunchSetup.exe", 
@@ -16,5 +17,40 @@
       "linux32": "https://github.com/Crunch/Crunch-2/releases/download/v2.5.1/Crunch2_linux32.deb",
       "linux64": "https://github.com/Crunch/Crunch-2/releases/download/v2.5.1/Crunch2_linux64.deb"
     }
+  },
+  "window": {
+    "title": "Crunch 2",
+    "position": "center",
+    "show": false
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/nw src",
+    "postinstall": "(cd src && npm install)",
+    "test": "(cd src && ../node_modules/.bin/nw . --test)"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "chai": "^3.5.0",
+    "coffee-script": "^1.12.5",
+    "gulp": "^3.9.1",
+    "gulp-appdmg": "^1.0.3",
+    "gulp-cram": "^0.2.0",
+    "gulp-debug": "^3.1.0",
+    "gulp-github-release": "git://github.com/aluxian/gulp-github-release.git",
+    "gulp-if": "^2.0.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-merge": "^0.1.1",
+    "gulp-node-webkit-builder": "git://github.com/leftstick/gulp-node-webkit-builder.git",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8",
+    "lodash": "^4.17.4",
+    "mocha": "^3.3.0",
+    "nw-builder": "^3.2.0",
+    "run-sequence": "^1.2.2",
+    "shelljs": "^0.7.7"
+  },
+  "dependencies": {
+    "nw": "^0.16.1-sdk",
+    "winresourcer": "^0.9.0"
   }
 }

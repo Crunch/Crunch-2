@@ -1,0 +1,11 @@
+<div class="modal-body {{icon ? 'has-icon': '' }}">
+	<i class="{{ icon }}"></i>
+	<h2>Save <strong>{{ data.file.name }}</strong>?</h2>
+	<p>Do you want to save this file before closing? If you don't save your changes, they will be lost forever. FOREVER.</p>
+</div>
+
+<div class="modal-actions">
+	<button id="m-save" class="primary btn" on-click="save"><span>Yep, Save!</span></button>
+	<button id="m-cancel" on-click="cancel" class="secondary btn"><span>Cancel</span></button>
+	<button id="m-dontsave" class="left secondary btn" on-click="nosave"><span>Nope.</span></button>
+</div>

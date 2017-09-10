@@ -1,4 +1,8 @@
 cert
+node_modules
+cache/
+build/
+opt/
 
 #################
 ## Eclipse

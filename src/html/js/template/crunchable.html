@@ -1,0 +1,124 @@
+{{#top}}
+<div class="left-top">
+	<b class="back" on-click="back"><i class="ico-chevron-left"></i></b>
+	<div class="title">{{ root.name }}{{ root.ext }}</div>
+	<b class="right crunch white" on-click="crunch"></b>
+</div>
+<div class="search"><input type="text" value="{{ root.searchText }}" class="crunchable-search {{#if root.searchText }}has-value{{/if}}" /><i class="ico ico-close"></i></div>
+<div class="scrollable tree {{ search ? 'search-flag' : ''}}">
+	<div class="content-outer">
+	<div class="content-wrapper" style="flex: initial">
+		{{#if search}}
+			<p>
+			{{#if totalMatches}}
+				{{ totalMatches }} matches found.
+			{{else}}
+				No matches found.
+			{{/if}}
+			</p>
+		{{/if}}
+		<h1>Source</h1>
+		<ul class="top-file">
+
+			{{ #root }}
+			<li class="file" style="padding-left: 0"><s></s><span class="{{ .c ? 'c' : ''}} {{ .f ? 'f' : '' }}" on-click="highlight" on-dblclick="select" style="float: left"  ><s>{{ .name }}<s class="{{ .c ? 'c' : ''}} {{ .f ? 'f' : '' }}">{{ .ext }}</s></s> {{{ top.search && .type==='file' && .matches ? '<s class="m">(' + .matches + ')</s>' : '' }}}</span>
+				{{#engines}}
+					<span class="compiler {{ ~/top.open ? 'open' : ''}}" on-click="set('top.open', !~/top.open)"  style="float: right; clear: right;">{{.compiler}} <i class="ico-cog"></i></span>
+				
+					<div class="compiler-settings">
+						<div class="settings-inner">
+						<h3>{{ .compiler }} Options</h3>
+						{{# { compiler: .compiler, fileOptions: this.options } }}
+						{{#each getSettings(compiler).options }}
+							<div class="field">
+							{{#if .values}}
+								<label>{{.label}}</label>
+								<select value="{{fileOptions[@key]}}" on-change="updateSettings">
+								{{#each .values}}
+									<option value="{{@key}}">{{ this[@key] }}</option>
+								{{/each}}
+								</select>
+							{{elseif .type === "bool"}}
+								<label>
+									{{label}}
+								</label>
+								<input type="checkbox" checked="{{fileOptions[@key]}}" on-change="updateSettings" />
+							{{elseif .type === "text"}}
+								<label>{{.label}}</label>
+								<input type="text" value="{{fileOptions[@key]}}" on-change="updateSettings" />
+							{{/if}}
+							</div>
+						{{/each}}
+						{{/}}
+						</div></div>
+				
+						<ul style="clear: both;">
+						{{ #output}}
+							{{>file}}
+						{{/output}}
+						</ul>
+				{{/}}
+
+			</li>
+			{{/root}}
+		</ul>
+		
+	
+	</div>
+
+	<div class="content-wrapper">
+	
+	{{#if ~/top.sources}}
+		{{#each ~/top.sources:category }}
+			<ul>
+
+				{{#each this:i}}
+					{{#if i == 0}}
+						<li style="height: 23px"><h1>{{ category }}</h1></li>
+					{{/if}}
+					{{>file this}}
+				{{/each}}
+			</ul>
+			
+		{{/each}}
+	{{/if}}
+
+	
+	</div>
+	</div>
+</div>
+{{/top}}
+
+{{#partial folder}}
+<div class="ul-outer" intro-outro="slide: 100">
+	<ul>
+		{{#.files}}
+			{{>file}}
+			{{! else <li class="empty file"><span on-click="highlight" on-dblclick="select"><i></i><s>(empty)</s></span> }}
+		{{/.files}}
+	</ul>
+</div>
+{{/partial}}
+
+{{#partial file}}
+	{{#if .output || !~/top.search || ~/top.search && .matches}}
+
+	<li data-matches="{{.matches}}" class="{{ .type === 'folder' ? 'folder' : 'file' }} {{ getOpen(.) || ~/top.search ? 'open' : '' }}" {{#if ./root || .output}}style="padding-left: 0"{{/if}}
+		><s class="{{ ./selected ? 'selected' : '' }}">
+		</s>
+		<span class="{{ .c ? 'c' : ''}} {{ .f ? 'f' : '' }}" on-click="highlight" on-dblclick="select"><i on-click="open"></i>{{#if .path == ~/root.path}}IN{{/if}}{{#if .output }}<b on-click="selectOutput: {{ ~/top.root }}" class="output-link"> 
+				<i class="ico-link"></i></b>
+			{{/if}}<s>{{ .name }}<s
+		class="{{ .c ? 'c' : ''}} {{ .f ? 'f' : '' }}">{{ .ext }}</s></s>
+		{{{ ~/top.search && .type==='file' && .matches ? '<s class="m">(' + .matches + ')</s>' : '' }}}
+		</span>
+
+
+		{{#if .type==='folder' && (getOpen(.) || ~/top.search && .matches) }}
+			
+			{{>folder}}
+			
+		{{/if}}
+	</li>
+	{{/if}}
+{{/partial}}

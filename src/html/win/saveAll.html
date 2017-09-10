@@ -1,0 +1,18 @@
+<div class="modal-body {{icon ? 'has-icon': '' }}">
+	<i class="{{ icon }}"></i>
+	<h2>{{ headline ? headline : 'Oh, I guess you\'re leaving' }}</h2>
+	<p>Do you want to save {{ getDirties().length == 1 ? 'this file' : 'these files' }} before you {{ headline ? 'close' : 'go' }}?</p>
+	
+	{{#each getDirties():i }}
+	<div class="field">
+		<input type="checkbox" checked="{{~/saveList[i]}}" /> {{ name }} <s>{{ path.length > 43 ? '...' + path.slice(-40) : path }}</s>
+	</div>
+	{{/each}}
+</div> 
+
+<div class="modal-actions">
+	
+	<button on-click="save" class="primary btn"><span>Save &amp; Close</span></button>
+	<button class="left secondary btn" on-click="nosave"><span>Don't Save</span></button>
+	<button on-click="cancel" class="tertiary btn"><span>Cancel</span></button>
+</div>

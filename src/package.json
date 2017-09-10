@@ -1,0 +1,72 @@
+{
+  "name": "Crunch2",
+  "main": "launcher.html",
+  "version": "2.5.1",
+  "description": "The editor and compiler for awesome people.",
+  "start": {
+    "test": "node ../node_modules/mocha/bin/mocha"
+  },
+  "window": {
+    "title": "Crunch 2",
+    "min_width": 800,
+    "min_height": 480,
+    "width": 1024,
+    "height": 640,
+    "icon": "html/img/ico/crunch-icon_48.png",
+    "toolbar": true
+  },
+  "scripts": {
+    "buildaccord": "make buildaccord && node ./buildaccord.js"
+  },
+  "dependencies": {
+    "accord": "https://api.github.com/repos/jescalan/accord/tarball/v0.27.3",
+    "babel-core": "latest",
+    "babel-preset-es2015": "latest",
+    "bluebird": "^3.3",
+    "clean-css": "latest",
+    "coffee-script": "latest",
+    "current-path": "^2.0",
+    "filewatcher": "^3.0",
+    "flat-file-db": "^1.0",
+    "graceful-fs": "^4.1",
+    "homedir": "^0.6",
+    "hook-stdio": "^1.0",
+    "html-minifier": "^3.2",
+    "less": "latest",
+    "livescript": "latest",
+    "lodash": "^4.11",
+    "markdown": "latest",
+    "marked": "^0.3",
+    "node-uuid": "^1.4",
+    "path-is-inside": "^1.0",
+    "pug": "^2.0.0-rc.4",
+    "react-tools": "latest",
+    "request": "^2.72",
+    "rewire": "^2.5",
+    "sass.js": "latest",
+    "seek": "https://api.github.com/repos/Crunch/node-seek/tarball/v0.3.1",
+    "semver": "^5.1",
+    "stylus": "latest",
+    "uglify-js": "^2.8.29",
+    "universal-analytics": "^0.4.6"
+  },
+  "platformOverrides": {
+    "win": {
+      "window": {
+        "toolbar": false
+      }
+    },
+    "osx": {
+      "window": {
+        "toolbar": false
+      }
+    },
+    "linux": {
+      "window": {
+        "toolbar": false
+      }
+    }
+  },
+  "manifestUrl": "https://raw.githubusercontent.com/Crunch/Crunch-2/master/package.json",
+  "devDependencies": {}
+}

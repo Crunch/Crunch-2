@@ -1,0 +1,560 @@
+@font-face {
+    font-family: SourceCode;
+    font-weight: normal; 
+    font-style: normal; 
+    src: url("fonts/SourceCodePro-Medium.otf.woff") format("woff");
+}
+// @font-face { 
+//   font-family: 'Ubuntu';
+//   src: url('fonts/UbuntuMono-Regular.ttf') format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face { 
+//   font-family: 'Firacode';
+//   src: url('fonts/FiraCode-Regular.otf') format('opentype');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+@font-face { 
+  font-family: 'Hasklig';
+  src: url('fonts/Hasklig-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+// @font-face {
+//     font-family: SourceSans;
+//     font-weight: normal;
+//     font-style: normal; 
+//     src: url("fonts/SourceSansPro-Regular.otf.woff") format("woff");
+// }
+// @font-face {
+//     font-family: SourceSans;
+//     font-weight: bold;
+//     font-style: normal;
+//     src: url("fonts/SourceSansPro-Bold.otf.woff") format("woff");
+// }
+@font-face {
+    font-family: Crunch; // generated w/ icomoon
+    src: url("fonts/crunch.woff") format("woff");
+    font-weight: normal;
+	font-style: normal;
+}
+// @font-face {
+//     font-family: SymbolSet;
+//     src: url("fonts/ss-standard.woff") format("woff");
+// }
+
+
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(fonts/Lato/Lato-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(fonts/Lato/Lato-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(fonts/Lato/Lato-Bold.ttf) format('truetype');
+}
+
+
+
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(fonts/Roboto/Roboto-Light.ttf) format('truetype');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(fonts/Roboto/Roboto-Light.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+    font-family: 'crunch';
+    src:
+        url('fonts/crunch.ttf?36evtx') format('truetype'),
+        url('fonts/crunch.woff?36evtx') format('woff'),
+        url('fonts/crunch.svg?36evtx#crunch') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'crunch' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-find_replace:before {
+    content: "\e881";
+}
+.ico-keyboard_backspace:before {
+    content: "\e317";
+}
+.ico-playlist_play:before {
+    content: "\e05f";
+}
+.ico-crunch:before {
+    content: "\e901";
+}
+.ico-lock:before {
+    content: "\e900";
+}
+.ico-cog2:before {
+    content: "\e601";
+}
+.ico-star2:before {
+    content: "\e602";
+}
+.ico-floppy:before {
+    content: "\e600";
+}
+.ico-chevron-down:before {
+    content: "\f0a3";
+}
+.ico-chevron-up:before {
+    content: "\f0a2";
+}
+.ico-gist:before {
+    content: "\f00e";
+}
+.ico-git-branch:before {
+    content: "\f020";
+}
+.ico-git-compare:before {
+    content: "\f0ac";
+}
+.ico-git-merge:before {
+    content: "\f023";
+}
+.ico-git-pull-request:before {
+    content: "\f009";
+}
+.ico-search:before {
+    content: "\f02e";
+}
+.ico-stop:before {
+    content: "\f08f";
+}
+.ico-x:before {
+    content: "\f081";
+}
+.ico-zap:before {
+    content: "\26a1";
+}
+.ico-pacman:before {
+    content: "\e916";
+}
+.ico-file-empty:before {
+    content: "\e924";
+}
+.ico-files-empty:before {
+    content: "\e925";
+}
+.ico-file-text2:before {
+    content: "\e926";
+}
+.ico-file-picture:before {
+    content: "\e927";
+}
+.ico-file-zip:before {
+    content: "\e92b";
+}
+.ico-copy:before {
+    content: "\e92c";
+}
+.ico-paste:before {
+    content: "\e92d";
+}
+.ico-stack:before {
+    content: "\e92e";
+}
+.ico-folder:before {
+    content: "\e92f";
+}
+.ico-folder-open:before {
+    content: "\e930";
+}
+.ico-folder-plus:before {
+    content: "\e931";
+}
+.ico-folder-minus:before {
+    content: "\e932";
+}
+.ico-folder-download:before {
+    content: "\e933";
+}
+.ico-folder-upload:before {
+    content: "\e934";
+}
+.ico-price-tag:before {
+    content: "\e935";
+}
+.ico-price-tags:before {
+    content: "\e936";
+}
+.ico-credit-card:before {
+    content: "\e93f";
+}
+.ico-calculator:before {
+    content: "\e940";
+}
+.ico-lifebuoy:before {
+    content: "\e941";
+}
+.ico-address-book:before {
+    content: "\e944";
+}
+.ico-pushpin:before {
+    content: "\e946";
+}
+.ico-history:before {
+    content: "\e94d";
+}
+.ico-clock:before {
+    content: "\e94e";
+}
+.ico-clock2:before {
+    content: "\e94f";
+}
+.ico-alarm:before {
+    content: "\e950";
+}
+.ico-box-add:before {
+    content: "\e95e";
+}
+.ico-box-remove:before {
+    content: "\e95f";
+}
+.ico-download:before {
+    content: "\e960";
+}
+.ico-upload:before {
+    content: "\e961";
+}
+.ico-floppy-disk:before {
+    content: "\e962";
+}
+.ico-drive:before {
+    content: "\e963";
+}
+.ico-database:before {
+    content: "\e964";
+}
+.ico-undo:before {
+    content: "\e965";
+}
+.ico-redo:before {
+    content: "\e966";
+}
+.ico-bubble:before {
+    content: "\e96b";
+}
+.ico-bubbles:before {
+    content: "\e96c";
+}
+.ico-bubbles2:before {
+    content: "\e96d";
+}
+.ico-bubble2:before {
+    content: "\e96e";
+}
+.ico-bubbles3:before {
+    content: "\e96f";
+}
+.ico-bubbles4:before {
+    content: "\e970";
+}
+.ico-spinner2:before {
+    content: "\e97b";
+}
+.ico-spinner3:before {
+    content: "\e97c";
+}
+.ico-spinner4:before {
+    content: "\e97d";
+}
+.ico-spinner6:before {
+    content: "\e97f";
+}
+.ico-spinner7:before {
+    content: "\e980";
+}
+.ico-spinner8:before {
+    content: "\e981";
+}
+.ico-spinner10:before {
+    content: "\e983";
+}
+.ico-zoom-in:before {
+    content: "\e987";
+}
+.ico-zoom-out:before {
+    content: "\e988";
+}
+.ico-enlarge:before {
+    content: "\e989";
+}
+.ico-shrink:before {
+    content: "\e98a";
+}
+.ico-enlarge2:before {
+    content: "\e98b";
+}
+.ico-shrink2:before {
+    content: "\e98c";
+}
+.ico-wrench:before {
+    content: "\e991";
+}
+.ico-cog:before {
+    content: "\e994";
+}
+.ico-cogs:before {
+    content: "\e995";
+}
+.ico-magic-wand:before {
+    content: "\e997";
+}
+.ico-aid-kit:before {
+    content: "\e998";
+}
+.ico-bug:before {
+    content: "\e999";
+}
+.ico-meter:before {
+    content: "\e9a6";
+}
+.ico-fire:before {
+    content: "\e9a9";
+}
+.ico-bin:before {
+    content: "\e9ac";
+}
+.ico-bin2:before {
+    content: "\e9ad";
+}
+.ico-target:before {
+    content: "\e9b3";
+}
+.ico-shield:before {
+    content: "\e9b4";
+}
+.ico-power:before {
+    content: "\e9b5";
+}
+.ico-switch:before {
+    content: "\e9b6";
+}
+.ico-power-cord:before {
+    content: "\e9b7";
+}
+.ico-clipboard:before {
+    content: "\e9b8";
+}
+.ico-tree:before {
+    content: "\e9bc";
+}
+.ico-cloud:before {
+    content: "\e9c1";
+}
+.ico-cloud-download:before {
+    content: "\e9c2";
+}
+.ico-cloud-upload:before {
+    content: "\e9c3";
+}
+.ico-cloud-check:before {
+    content: "\e9c4";
+}
+.ico-download2:before {
+    content: "\e9c5";
+}
+.ico-upload2:before {
+    content: "\e9c6";
+}
+.ico-download3:before {
+    content: "\e9c7";
+}
+.ico-upload3:before {
+    content: "\e9c8";
+}
+.ico-link:before {
+    content: "\e9cb";
+}
+.ico-flag:before {
+    content: "\e9cc";
+}
+.ico-attachment:before {
+    content: "\e9cd";
+}
+.ico-plus:before {
+    content: "\ea0a";
+}
+.ico-minus:before {
+    content: "\ea0b";
+}
+.ico-blocked:before {
+    content: "\ea0e";
+}
+.ico-cross:before {
+    content: "\ea0f";
+}
+.ico-checkmark:before {
+    content: "\ea10";
+}
+.ico-checkmark2:before {
+    content: "\ea11";
+}
+.ico-tab:before {
+    content: "\ea45";
+}
+.ico-move-up:before {
+    content: "\ea46";
+}
+.ico-move-down:before {
+    content: "\ea47";
+}
+.ico-command:before {
+    content: "\ea4e";
+}
+.ico-ctrl:before {
+    content: "\ea50";
+}
+.ico-embed:before {
+    content: "\ea7f";
+}
+.ico-embed2:before {
+    content: "\ea80";
+}
+.ico-terminal:before {
+    content: "\ea81";
+}
+.ico-libreoffice:before {
+    content: "\eade";
+}
+.ico-arrow-right:before {
+    content: "\e605";
+}
+.ico-arrow-right2:before {
+    content: "\e606";
+}
+.ico-arrow-down-right2:before {
+    content: "\e603";
+}
+.ico-arrow-down2:before {
+    content: "\e604";
+}
+.ico-star:before {
+    content: "\f005";
+}
+.ico-star-o:before {
+    content: "\f006";
+}
+.ico-close:before {
+    content: "\f00d";
+}
+.ico-cog3:before {
+    content: "\f013";
+}
+.ico-chevron-left:before {
+    content: "\f053";
+}
+.ico-chevron-right:before {
+    content: "\f054";
+}
+.ico-plus2:before {
+    content: "\f067";
+}
+.ico-minus2:before {
+    content: "\f068";
+}
+.ico-asterisk:before {
+    content: "\f069";
+}
+.ico-exclamation-circle:before {
+    content: "\f06a";
+}
+.ico-exclamation-triangle:before {
+    content: "\f071";
+}
+.ico-chevron-up2:before {
+    content: "\f077";
+}
+.ico-chevron-down2:before {
+    content: "\f078";
+}
+

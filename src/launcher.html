@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Crunch 2</title>
+ 
+	<style type="text/css">
+		html {
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+		}
+		body, iframe { 
+			border: 0;
+			margin: 0;
+			padding: 0;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+		}
+		body {
+			overflow: auto;
+		}
+	</style>
+
+
+	<script>
+	// prevent default behavior from changing page on dropped file
+		window.ondragover = function(e) { e.preventDefault(); return false };
+		window.ondrop = function(e) { e.preventDefault(); return false };
+
+		// Don't cache any files, since they're all local anyway 
+		// (prevents older files from persisting after upgarde)
+		//var nw = require('nw');
+		nw.App.clearCache();
+
+		if(nw.App.argv.indexOf('--test') > -1) {
+			location.href = 'tests.html';
+		}
+		else {
+			location.href = 'html/main.html';
+		}
+
+	</script>
+</head>
+<body>
+	<!-- Loads the main HTML from the Crunch-2 repo -->
+	<!-- <iframe src="html/main.html"></iframe> -->
+</body>
+</html>

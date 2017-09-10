@@ -1,0 +1,61 @@
+<div class="message-top">
+	<b on-click="open" class="middle"><i class="ico-cog"></i><span>Crunch Settings</span></b>
+</div>
+
+
+<div class="scrollable">
+{{#each settings}}
+	
+	{{#if .options}}
+
+		<div class="section">
+			<h2>{{.label}}</h2>
+			{{# { options: .options, item: ., data: ~/values[@key] } }}
+			{{#each options}}
+				{{# { item: ., data: data, index: @key } }}
+				{{>setting}}
+				{{/}}
+			{{/each}}
+			{{/}}
+		</div>
+	{{else}}
+		{{# { item: ., data: ~/values, index: @key } }}
+			{{>setting}}
+		{{/}}
+	{{/if}}
+	
+{{/each}}
+
+{{#if !validated }}
+	<b class="btn primary" on-click="openPurchase" style="clear: both; margin: 80px 20px; font-size: 16px; line-height: 2.3"><i class="ico-power" style="position: relative; top: 2px;"></i> <span>Get Crunch 2 Pro!</span></b>
+{{/if}}
+</div>
+
+{{#partial setting}}
+	{{#with item}}
+		
+		{{#if .values}}
+		<div class="field">
+			<label>{{.label}}</label>
+			<span class="select">
+				<select value="{{../data[index]}}">
+				{{#each .values}}
+					<option value="{{@key}}">{{ this[@key] }}</option>
+				{{/each}}
+				</select>
+			</span>
+		</div>
+		{{elseif .type === "bool"}}
+		<div class="checkbox field">
+			<label>{{label}}</label>
+			<input type="checkbox" checked="{{../data[index]}}" />	
+		</div>
+		{{elseif .type === "text" || .type === "number"}}
+		<div class="text field">
+			<label>{{.label}}</label>
+			<input type="text" value="{{../data[index]}}" />
+		</div>
+		{{/if}}
+		
+	{{/with}}
+{{/partial}}

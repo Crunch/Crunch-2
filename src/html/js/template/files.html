@@ -1,0 +1,66 @@
+<div class="left-top">
+	<b class="back" on-click="back"><i class="ico-chevron-left"></i></b>
+	<div class="title">{{ root.name }}</div>
+	<!--<b class="right ss-settings" on-click="settings"></b> -->
+</div>
+<div class="search"><input type="text" value="{{ root.searchText }}" class="files-search {{#if root.searchText }}has-value{{/if}}" /><i class="ico ico-close"></i></div>
+<div class="scrollable tree {{ root.search ? 'search-flag' : ''}}">
+	<div class="content-outer">
+	<div class="content-wrapper">
+	{{#if root.search}}
+		<p>
+		{{#if root.totalMatches}}
+			{{ root.totalMatches }} matches found.
+		{{else}}
+			No matches found.
+		{{/if}}
+		</p>
+	{{/if}}
+
+	{{#root}}
+		{{#if !~/root.search }}
+		<s class="path folders">{{{ getFolders(root.path) }}}</s>
+		{{/if}}
+		<ul class="{{ root.search ? 'search-on' : ''}}">
+			{{#./files:f}}
+				{{>file}}
+			{{/}}
+		</ul>
+	{{/root}}
+	</div>
+	</div>
+</div>
+<!-- intro-outro="slide: 150" -->
+{{#partial folder}}
+<div class="ul-outer" intro-outro="slide: 100">
+	<ul>
+		{{#./files:f}}
+			{{>file}}
+			{{! else <li class="empty file"><span on-click="highlight" on-dblclick="select"><i></i><s>(empty)</s></span> }}
+		{{/files}}
+	</ul>
+</div>
+{{/partial}}
+<!-- intro="fly: { duration: 150, x: '100%' }" outro="fly: { duration: 150, x: '-100%' }"  -->
+{{#partial file}}
+<li class="{{ ./type === 'folder' ? 'folder' : 'file' }} {{ ./hasCrunch ? 'has-crunch' :'' }} {{ ./type === 'folder' && getOpen(.) ? 'open' : '' }}">
+	{{#if ~/root.search }}
+	<div class="context-path">{{{ getPath(.path, .keywords) }}}</div>
+	{{/if}}
+	{{#if ./selected }}<s class="selected"></s>{{/if}}
+	<span class="{{ .c ? 'c' : ''}} {{ .f ? 'f' : '' }}" on-click="highlight" on-dblclick="select"><i on-click="open"></i>{{#if 
+		./matches && ./matches.length === 0 }}
+		<s>{{{ highlightMatch(.name, .ext, .keywords) }}}</s>
+		{{else}}
+		<s>{{ .name }}<s class="{{ .c ? 'c' : ''}} {{ .f ? 'f' : '' }}">{{ .ext }}</s></s>
+		{{/if}}
+	{{{ ./matches && ./matches.length ? ' <s class="m">('+./matches.length+')</s>' : '' }}}</span>
+	
+	{{# ./type === 'folder' && getOpen(., @keypath) }}
+		
+		{{>folder}}
+		
+	{{/ ./type === 'folder' }}
+	
+</li>
+{{/partial}}

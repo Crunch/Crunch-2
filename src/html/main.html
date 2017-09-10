@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Crunch 2</title>
+	
+	<script>
+
+		CRUNCH_START_TIME = new Date();
+		CRUNCH_FIRST_RUN = false;
+
+		if(require('fs').existsSync('./html/dist')) {
+			global.__jsdirname = 'dist';
+		}
+		else {
+			global.__jsdirname = 'js';
+		}
+
+
+	</script>
+	
+	<style type="text/css">
+		html {
+		    display: block;
+		    background: rgba(0,0,0,0.5);
+		}
+		body { opacity: 0;}
+		iframe {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+			z-index: 9000;
+		}
+	</style>
+	<!-- #scripts -->
+	
+
+	<script src="curl.min.js" data-curl-run="dist/crunch/main.js, js/crunch/main.js"></script>
+
+</head>
+<body>
+
+<div id="container">
+		
+	<div id="panel-left" class="panel-left">
+
+		<div class="views active-project">
+
+			<div class="projects view" id="projects"></div>
+			<div class="files view has-search" id="files"></div>
+			<div class="crunchable view has-search" id="crunchable"></div>
+			
+		</div>
+			
+		<div class="bottom-bar settings" id="globalSettings">
+			<!--<b class="middle ss-settings"></b>-->
+		</div>
+	</div>
+	
+	<div class="panel-main">
+
+		<div id="widgets">
+			<button class="widget-crunch" style="font-size: 16px"><i class="ico-crunch"></i></button>
+			<button class="widget-search"><i class="ico-search"></i></button>
+			<button class="widget-replace" style="font-size: 24px"><i class="ico-find_replace"></i></button>
+			<button class="widget-line" style="font-size: 24px"><i class="ico-playlist_play"></i></button>
+		</div>
+		<div id="tabs" class="tabs">
+		</div>
+		
+		<div id="editor-window" class="editor-main">
+			<div id="editor-bg"></div>
+			<div id="editor" style="position: absolute; top: 0; left: 0; bottom: 0px; right: 30px; z-index: 2"></div>
+			
+			<div id="dropdowns-outer"><div id="gotolinebar">
+				<input type="text" placeholder="Line..." /><b class="close"></b> 
+			</div></div>
+			<div id="splash"><div id="splash-inner"></div></div>
+			
+		</div>
+
+		<div class="bottom-bar messages" id="messageBar"></div>
+	</div>
+	
+	<div class="modal-background" id="modals"></div>
+
+	<iframe style="display: none; background: transparent" src="https://getcrunch.co/validate/purchase.html" frameborder="0" nwdisable nwfaketop></iframe>
+</div>
+
+</body>
+</html>

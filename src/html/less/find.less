@@ -1,0 +1,69 @@
+#dropdowns-outer {
+	position: absolute; 
+	right: 31px;
+	top: 82px;
+	height: 33px;
+	overflow: hidden;
+	z-index: 1000;
+	display: none;
+}
+#findbar, #gotolinebar {
+	position: relative;
+	left: 0;
+	width: 100%;
+	height: 32px;
+	background: rgba(200,200,200,0.8);
+	border: 1px solid rgba(255,255,255,0.2);
+	border-radius: 1px;
+	z-index: 1000;
+}
+#gotolinebar {
+	width: 110px;
+	float: right;
+}
+#findbar input, #gotolinebar input {
+    border: 1px solid #c9c9c9;
+    background: rgba(253,253,253,0.7);
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    height: 22px;
+    width: 178px;
+    z-index: 2;
+    font-size: 13px;
+}
+#gotolinebar input {
+	width: 70px;
+}
+#findbar button, #gotolinebar button {
+	width: 25px;
+	height: 24px;
+	position: absolute;
+	right: 28px;
+	top: 4px;
+	z-index: 1;
+}
+#findbar .up, #findbar .down {
+	background: rgba(227,227,227,0.1);
+	line-height: 28px;
+}
+#findbar .up {
+	right: 53px;
+}
+#findbar .down {
+	background-position: -25px 0;
+}
+#gotolinebar .go {
+	background: rgba(227,227,227,0.1) url(../img/skin/go.png);
+}
+#findbar button:hover, #gotolinebar button:hover { background-color: rgba(227,227,227,0.25); }
+#findbar button:active, #gotolinebar button:active { background-color: rgba(150,150,150,0.1); }
+#findbar .close, #gotolinebar .close {
+	right: 8px;
+	top: -1px;
+	color: #777;
+	position: absolute;
+	&:before {
+	    color: #777;
+	}
+}

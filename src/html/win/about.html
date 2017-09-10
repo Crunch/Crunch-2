@@ -1,0 +1,81 @@
+<div class="modal-body {{icon ? 'has-icon': '' }}">
+	<i class="{{ icon }}"></i>
+	{{#if i != 9}}
+		{{#if i < 13}}
+		<h2>About Crunch 2</h2>
+		<em>Version {{appVersion}}</em>
+		{{else}}
+		<h2>Crunch 2</h2>
+		{{/if}}
+
+		{{#if i < 4 }}
+			<p>Crunch was created by {{#if i > 0 }}the amazing{{/if}} Matthew Dean. The Crunch 2 UI was designed by {{#if i > 0 }}the talented{{/if}} Michael Norton.</p>
+			<p>Crunch 2 is built on NW.js {{#if i > 1 }} and unicorn dreams{{/if}}{{#if i > 2 }} and will bring the light to all humankind{{/if}}.</p>
+		{{elseif i < 10}}
+			<p>Crunch 2 was designed by Apple in California.</p>
+			<div style="font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Frutiger, sans-serif; font-size: 28px; font-weight: 100;">
+			{{#if i == 5}}			
+				More editor than editor.
+			{{/if}}
+			{{#if i > 5}}
+				The compiler you've been waiting for.
+				{{#if i > 6}}
+				<p style="font-weight: 400; font-size: 16px; margin-top: 0;">
+					The finest in code craftsmanship. The most exquisite of app interfaces. Right beneath your fingertips.
+				</p>
+				{{/if}}
+			{{/if}}
+			{{#if i > 7}}
+			<p style="font-weight: 400; font-size: 16px">
+				Finally, your troubles with command lines are over.
+			</p>
+			{{/if}}
+			</div>
+		{{else}}
+		{{/if}}
+
+	{{else}}
+		<p>Knock knock, Neo.</p>
+	{{/if}}
+
+	{{#if i > 9 && i < 13}}
+		<p>What if I told you that Grunt was not real, that Gulp was part of a dream? </p>
+		{{#if i > 10}}
+		<p>What if you could never wake from that dream?</p>
+		{{/if}}
+		{{#if i > 11}}
+		<p>How would you know a real app...from the dream one?</p>
+		{{/if}}
+	{{/if}}
+	{{#if i > 12}}
+		{{#if i == 13}}
+		<p>The prophecy has been fulfilled.</p>
+		{{/if}}
+
+		{{#if i == 14}}
+			<p>
+				Many Bothans died to bring us this application.
+			</p>
+		{{/if}}
+		{{#if i > 14}}
+			<p>
+				It does nerdy stuff. But, like, not horribly.
+			</p>
+		{{/if}}
+		{{#if i > 15}}
+			<p>
+				I think we are done here.
+			</p>
+		{{/if}}
+	{{/if}}
+
+</div> 
+
+<div class="modal-actions">
+{{#if i <= 15 }}
+	<button on-click="cancel" class="primary btn"><span>Interesting!</span></button>
+	<button on-click="set('i', i + 1)" class="secondary btn"><span>Not Interesting Enough</span></button>
+{{else}}
+	<button on-click="cancel" class="primary btn"><span>Okay, Fine.</span></button>
+{{/if}}
+</div>

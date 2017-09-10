@@ -1,0 +1,80 @@
+{{#top}}
+<div class="mains-outer">
+	<div class="mains">
+	{{ #files:i }}
+	{{ >tab }}
+	{{ /files }}
+	</div>
+	<button class="new-file" type="button" on-click="newFile"><i class="ico-plus"></i></button>
+</div>
+
+
+<div class="subs-outer" style="{{ files.length == 0 ? 'display: none' : '' }}">
+	<div class="subs">
+	{{ #files:i }}
+		{{ #activeTabIndex == i && crunchable }}
+		
+		{{ #.collection:j }}
+			{{ # j!=0 }}
+			{{ >subtab }}
+			{{ / }}
+		{{ /collection }}
+		
+		{{ /activeTabIndex }}
+	{{ /files }}
+	</div>
+</div>
+
+{{/top}}
+
+{{#partial tab}}
+<div on-click="select" class="t tab-out {{ activeTabIndex == i ? 'active' : ''}} {{crunchable ? 'crunched' : 'uncrunched'}} {{hasCompiler ? 'compiler' : 'plain'}} {{flipped && crunchable ? 'flipped' : ''}}"><!-- intro="fly:{x:0,y:40,duration:150}"  -->
+	{{ #crunchable }}
+	<div class="tab minis">
+		<!-- main file -->
+
+		{{ #.collection:j }}
+			{{ # j == 0 }}
+			<div on-click="selectSub" data-tooltip="{{ getTitle(path) }}" class="pathtip mini {{ j == ../../activeIndex ? 'active' : '' }}"><i class="dirty ico-star2 {{ dirty ? 'on' : '' }}"></i>{{ name }}</div>
+			{{/}}
+		{{ /collection }}
+		
+		<b class="crunch up" on-click="flipdown"></b>
+	</div>
+	{{ /crunchable }}
+	<div class="tab reg ">
+		<b on-click="close" class="close"></b>
+		{{#if !.collection[.activeIndex].dirty }}
+		<i class="dirty ico-star2 group {{ .dirty ? 'on' : '' }}"></i>
+		{{/if}}
+		<i class="dirty ico-star2 {{ .collection[.activeIndex].dirty ? 'on' : '' }}"></i>
+		{{ #.collection:j }}
+		{{ # j!=activeIndex }}
+		<span class="hide {{ j !== 0 ? 'sub' : ''}}">{{ name }}</span>
+		{{ / }}
+		{{ /collection }}
+		{{# { c: .collection[.activeIndex] } }}
+		<span data-tooltip="{{ getTitle(c.path) }}" class="pathtip {{ c.name !== collection[0].name ? 'sub' : ''}}">{{ c.name }}</span>
+		{{/ }}
+		{{#if hasCompiler }}
+		<b class="crunch tooltip" data-tooltip="
+			{{#if crunchable }}
+				Open the {{ root.name }} Crunchable
+			{{else}}
+				Attach an output file to Crunch to
+			{{/if}}"
+		on-click="flipup"></b>
+		{{ /if }}
+	</div>
+</div> 
+{{/partial}}
+
+{{#partial subtab}}
+<div on-click="selectSub" class="tab-out {{ ../../activeIndex == j ? 'active' : ''}} plain {{ output ? 'output' : '' }}">
+	<div class="tab reg">
+		<i class="dirty ico-star2 {{ ../../collection[j].dirty ? 'on' : '' }}"></i>
+		<b on-click="close" class="close"></b>
+		<span class="pathtip" data-tooltip="{{ getTitle(path) }}">{{ name }}</span>
+	</div>
+</div> 
+{{/partial}}

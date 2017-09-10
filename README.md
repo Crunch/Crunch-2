@@ -19,6 +19,24 @@ Thanks for your support of Crunch 2!
 http://getcrunch.co/
 
 ---
+The node-webkit platform wrapper for the Crunch 2 web app.
+
+Run Crunch with "nw src"
+
+This repo is currently private at least until I figure out which parts are commercial and which are free.
+
+To Build on Mac
+===============
+You need
+
+- Node / NPM
+- Homebrew
+- gulp "npm install -g gulp"
+- xcode dev tools "xcode-select --install"
+- xquartz / wine
+- makensis "brew install makensis"
+- fpm "brew install gnu-tar" "brew install fpm"
+- "gulp pack:all"
 
 Filing issues
 ====

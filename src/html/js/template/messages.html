@@ -1,0 +1,66 @@
+<div class="message-top">
+	<b on-click="open" class="middle {{ messages.0.new ? 'new': '' }}"><i class="ico-bubble"></i></b>
+
+	{{ #messages[0] }}
+	<div class="top">
+		{{>message}}
+	</div>
+	{{ /messages }}
+
+</div>
+
+
+<div class="scrollable">
+{{ #each messages:i }}
+	{{#if type != 'temp'}}
+	{{>message}}
+	{{/if}}
+{{ /each }}
+</div>
+
+{{#partial message}}
+<div class="message-item {{ type }} {{ ./new ? 'new' : '' }}">
+	<i class="icon {{ icon }} {{ loading ? 'loading' : '' }} {{type == 'purchase' ? 'ico-exclamation-triangle' : ''}} "></i>
+	<s class="title">{{ title }}</s>
+	<s class="message">
+		{{#if schema == 'crunch'}}
+			{{#if type == 'error'}}
+				
+				{{#if .message }}
+					Error "{{{ .message }}}"
+				{{else}}
+					{{#if obj.type }}
+						There was a {{ obj.type.toLowerCase() }} error
+					{{else}}
+						There was an error
+					{{/if}}
+				{{/if}}
+				 while crunching <a title="{{ root }}" on-click="jumpToLine"> {{ basename(root) }}</a>
+				
+				{{#if root !== obj.filename }}
+					in file
+					<a title="{{ obj.filename }}" on-click="jumpToLine"> {{ basename(obj.filename) }}</a>
+				{{/if}}
+				
+				on <a title="{{ obj.filename }}" on-click="jumpToLine">line {{ obj.line }}</a>.	
+			{{else}}
+				File <a title="{{ root }}" on-click="selectMain">{{ basename(root) }}</a> successfully crunched to 
+				<a title="{{ output }}" on-click="selectOutput">{{ basename(output) }}</a>.
+			{{/if}}
+		{{else}}
+			{{#if type == 'purchase'}}
+				This version of Crunch can't open .{{ obj }} files. <a on-click="purchase">Upgrade to Pro!</a>
+			{{else}}
+				{{{ .message }}}
+			
+			{{/if}}
+		{{/if}}
+
+	</s>
+	<s class="time">{{ time }}
+	{{ #if date != messages[0].date }}
+	    {{ date }}
+	{{ /if }}
+	</s>
+</div> 
+{{/partial}}

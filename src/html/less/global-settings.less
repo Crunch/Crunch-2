@@ -1,0 +1,71 @@
+
+.settings {
+    height: calc(100% + 34px);
+    top: 100%;
+    transition: top 0.15s;
+    font-weight: 400;
+    h2 {
+        margin: 8px 0;
+        font-weight: normal;
+        font-size: 13px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .section {
+        overflow: hidden;
+        clear: both;
+        margin: 10px 0;
+        border-top: 1px solid rgba(100,100,100,0.1);
+        border-bottom: 1px solid rgba(100,100,100,0.1);
+    }
+    label, input, select {
+        float: left;
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    select {
+        width: 100%;
+    }
+    label {
+        clear: left;
+        padding-right: 10px;
+        text-align: right;
+    }
+    &.open {
+        top: 0%;
+    }
+    .scrollable {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 20px;
+    }
+    .message-top {
+        text-align: center;
+        white-space: nowrap;
+        b {
+            float: none;
+            display: inline-block;
+            width: auto;
+            vertical-align: top;
+            .open& {
+                margin-top: 2px;
+            }
+        }
+        span {
+            display: inline-block;
+            vertical-align: top;
+            width: 0;
+            opacity: 0;
+            transition: width 0.15s, opacity 0.15s;
+            font-size: 20px;
+            line-height: 18px;
+            .open& {
+                opacity: 1;
+                width: 160px;
+            }
+        }
+    }
+}

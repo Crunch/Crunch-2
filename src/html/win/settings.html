@@ -1,0 +1,28 @@
+<div class="modal-body has-icon">
+	<i class="{{ icon }}"></i>
+	<h2>Output settings</h2>
+	{{#each settings}}
+		<div class="field">
+		{{#if .values}}
+			<label>{{.label}}</label>
+			<select value="{{~/values[@key]}}">
+			{{#each .values}}
+				<option value="{{@key}}">{{ this[@key] }}</option>
+			{{/each}}
+			</select>
+		{{elseif .type === "bool"}}
+			<label>
+				{{label}}
+			</label>
+			<input type="checkbox" checked="{{~/values[@key]}}" />
+		{{elseif .type === "text"}}
+			<label>{{.label}}</label>
+			<input type="text" value="{{~/values[@key]}}" />
+		{{/if}}
+		</div>
+	{{/each}}
+</div>
+
+<div class="modal-actions">
+	<button id="m-save" class="primary btn" on-click="cancel"><span>Perfect!</span></button>
+</div>

@@ -1,0 +1,23 @@
+<div class="modal-body {{icon || img ? 'has-icon': '' }}">
+	<i class="{{ icon }}">{{#if icon === true }}<img style="max-width: 72px" src="{{ img ? img : 'img/ico/crunch-icon_128.png' }}" />{{/if}}</i>
+	<h2>{{ title }}</h2>
+	<h3></h3>
+	<div class="field">
+		<label>Email</label>
+		<input type="text" value="{{ activate.email }}" />
+	</div>
+	<div class="field">
+		<label>License Key</label>
+		<input type="text" value="{{ activate.cc }}" />
+	</div>
+</div>
+
+<div class="modal-actions">
+	<button class="primary btn" on-click="primaryAction"><span>{{{ primary.label ? primary.label : 'Ok' }}}</span></button>
+	{{#if secondary.label}}
+	<button class="secondary btn" on-click="secondaryAction"><span>{{{ secondary.label }}}</span></button>
+	{{/if}}
+	{{#if tertiary.label}}
+	<button class="left secondary btn" on-click="tertiaryAction"><span>{{{ tertiary.label }}}</span></button>
+	{{/if}}
+</div>
